@@ -1,6 +1,8 @@
 const twitterWidth = 1024;
 const twitterHeight = 512;
 
+const logoRatio = 6.17283950617284;
+
 var input = document.getElementById('file'),
     theImg,
     imageResult,
@@ -73,7 +75,7 @@ function renderTwitterText() {
   ctxTwitter.fillStyle = 'white';
   ctxTwitter.textBaseline = 'middle';
 
-  ctxTwitter.drawImage(logo,308,414,408,66);
+  ctxTwitter.drawImage(logo,330,414,364,364/logoRatio);
   if(slogan.length > 0) {
     ctxTwitter.textAlign = "center";
     ctxTwitter.font = '100px Plakkaat';
