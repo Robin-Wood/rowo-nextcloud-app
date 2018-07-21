@@ -124,7 +124,7 @@ target.addEventListener("drop", function(e){
 }, true);
 
 var sloganInput = document.getElementById('slogan');
-sloganInput.addEventListener.on('keyup', function() {
+sloganInput.addEventListener('keyup', function() {
      if (this.value.length > 1) {
           slogan = this.value;
           renderImageTwitter();
