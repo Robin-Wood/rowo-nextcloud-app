@@ -39,7 +39,7 @@ function renderImage(){
     ctx.drawImage(image, 0, 0, image.width, image.height);
   };
 
-  image.src = src;
+  image.src = imageResult;
 }
 
 
