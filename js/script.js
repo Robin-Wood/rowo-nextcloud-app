@@ -67,7 +67,8 @@ function renderTwitterText() {
   ctxTwitter.globalCompositeOperation = 'source-over';
   ctxTwitter.fillStyle = 'white';
   ctxTwitter.textAlign = "center";
-  ctxTwitter.font = '150px Plakkaat'
+  ctxTwitter.textBaselin = 'middle';
+  ctxTwitter.font = '100px Plakkaat';
   ctxTwitter.fillText("ENDE GELÄNDE", twitterWidth/2, twitterHeight/2);
 }
 
