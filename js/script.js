@@ -5,7 +5,6 @@ var canvas = document.getElementById('image'),
     theImg,
     imageResult,
     blendColor = "#a2c516",
-    contrast = 1.2,
     ctx = canvas.getContext('2d'),
     ctxTwitter = canvasTwitter.getContext('2d'),
     fadeTime = 120,
@@ -18,6 +17,7 @@ function loadImage(src){
   reader.onload = function(e){
     imageResult = e.target.result;
     renderImage();
+    renderImageTwitter();
   };
   reader.readAsDataURL(src);
 
@@ -34,7 +34,7 @@ function renderImage(){
     canvas.height = image.height;
     ctx.fillStyle = blendColor;
     ctx.fillRect(0,0,canvas.width,canvas.height);
-    ctx.filter = currentFilter + ' contrast(' + contrast + ')';
+    ctx.filter = currentFilter + ' contrast('1.2')';
     ctx.globalCompositeOperation = currentBlend;
     ctx.drawImage(image, 0, 0, image.width, image.height);
   };
@@ -42,6 +42,10 @@ function renderImage(){
   image.src = imageResult;
 }
 
+function renderImageTwitter(){
+  var twitterImage = new Image();
+  console.log("Test");
+}
 
 // Download contents on canvas using filesaver.js
 document.getElementById("downloadIt").onclick = function() {
