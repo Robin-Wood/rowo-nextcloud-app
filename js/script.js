@@ -44,7 +44,6 @@ function renderImageVanilla() {
     ctxVanilla.filter = currentFilter + ' contrast(1.4)';
     ctxVanilla.globalCompositeOperation = currentBlend;
     ctxVanilla.drawImage(image, 0, 0, image.width, image.height);
-    renderTwitterText();
   };
   image.src = imageResult;
 }
@@ -75,8 +74,14 @@ function renderTwitterText() {
 }
 
 // Download contents on canvas using filesaver.js
-document.getElementById("downloadIt").onclick = function() {
-  canvas.toBlob(function(blob) {
+document.getElementById("downloadItVanilla").onclick = function() {
+  canvasVanilla.toBlob(function(blob) {
+    saveAs(blob, "image.jpg");
+  }, "image/jpeg", 0.9);
+}
+
+document.getElementById("downloadItTwitter").onclick = function() {
+  canvasTwitter.toBlob(function(blob) {
     saveAs(blob, "image.jpg");
   }, "image/jpeg", 0.9);
 }
