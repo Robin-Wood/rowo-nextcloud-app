@@ -6,14 +6,12 @@ style('robinwoodapp', 'style');
 
 <div id="app">
 	<div id="app-navigation">
-		<ul>
-			<li>
-				<label>
-					<span>Slogan</span>
-					<input type="text" id="slogan" />
-				</label>
-			</li>
-		</ul>
+		<div id="app-settings-conent"
+			<label>
+				<span>Slogan</span>
+				<input type="text" id="slogan" />
+			</label>
+		</div>
 	</div>
 	<div id="app-content">
 		<div id="app-content-wrapper">
