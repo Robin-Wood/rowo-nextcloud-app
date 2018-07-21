@@ -59,8 +59,14 @@ function renderImageTwitter(){
     ctxTwitter.filter = currentFilter + ' contrast(1.4)';
     ctxTwitter.globalCompositeOperation = currentBlend;
     drawImageProp(ctxTwitter, twitterImage, 0, 0, twitterWidth, twitterHeight);
+    renderTwitterText();
   };
   twitterImage.src = imageResult;
+}
+
+function renderTwitterText() {
+  ctxTwitter.textAlign = center;
+  ctxTwitter.fillText("ENDE GELÄNDE", twitterWidth, twitterHeight/2);
 }
 
 // Download contents on canvas using filesaver.js
