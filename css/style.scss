@@ -28,6 +28,7 @@ span.fontpreload {
     .imageBox {
       box-shadow: 0 0 3px #adadad;
       flex-basis: auto;
+      margin: 20px;
 
       .controls {
         background: #f5f5f5;
@@ -44,7 +45,6 @@ span.fontpreload {
 
 
 .imageBox {
-  margin: auto;
   max-width: 1024px;
   width: 100%;
 
