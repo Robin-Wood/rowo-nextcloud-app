@@ -15,6 +15,10 @@ span.fontpreload {
 
 .app-robinwoodapp #app-settings-content {
   display: block;
+
+  input[type='file'] {
+    width: 93%;
+  }
 }
 
 .outputs {

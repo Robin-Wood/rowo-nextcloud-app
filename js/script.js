@@ -82,48 +82,6 @@ document.getElementById("downloadIt").onclick = function() {
 }
 
 
-// Go back to first step and reset canvas
-document.getElementById("startOver").onclick = function() {
-  screenFade();
-}
-
-
-// Fade between stages of the screen
-function screenFade(){
-  // Go from step 1 to step 2
-  if($('.screen1').is(':visible')){
-    $('.screen1').fadeOut(fadeTime, function(){
-      $('.screen2').fadeIn(fadeTime, function(){
-        $('#image').animate({
-          marginTop: '0',
-          opacity: '1'
-        }, 300);
-      });
-    });
-  }
-  // Go from step 2 to step 1 and clear the canvas
-  else {
-    $('.screen2').fadeOut(fadeTime, function(){
-      $('.screen1').fadeIn();
-      $('#image').css({
-        marginTop: '10px',
-        opacity: '0'
-      });
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-    });
-  }
-}
-
-// Set up dropzone
-var target = document.getElementById('dropZone');
-target.addEventListener("dragover", function(e){e.preventDefault();}, true);
-target.addEventListener("drop", function(e){
-	e.preventDefault();
-  theImg = e.dataTransfer.files[0];
-	loadImage(theImg);
-  screenFade();
-}, true);
-
 var sloganInput = document.getElementById('slogan');
 sloganInput.addEventListener('keyup', function() {
      if (this.value.length > 1) {
@@ -137,7 +95,6 @@ input.addEventListener("change", function(e) {
   e.preventDefault();
   theImg = e.target.files[0];
   loadImage(theImg);
-  screenFade();
 }, true);
 
 
