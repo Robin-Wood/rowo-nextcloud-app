@@ -60,7 +60,7 @@ function renderImageTwitter(){
     ctxTwitter.clearRect(0,0, canvasTwitter.width, canvasTwitter.height);
     ctxTwitter.fillStyle = blendColor;
     ctxTwitter.fillRect(0,0,canvasTwitter.width,canvasTwitter.height);
-    ctxTwitter.filter = currentFilter + ' contrast(1.4)';
+    ctxTwitter.filter = currentFilter + ' contrast(1.6)';
     ctxTwitter.globalCompositeOperation = currentBlend;
     drawImageProp(ctxTwitter, twitterImage, 0, 0, twitterWidth, twitterHeight);
     renderTwitterText();
