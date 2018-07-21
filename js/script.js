@@ -98,18 +98,15 @@ document.getElementById("downloadItTwitter").onclick = function() {
 
 var sloganInput = document.getElementById('slogan');
 sloganInput.addEventListener('keyup', function() {
-     if (this.value.length > 1) {
-          slogan = this.value;
-          renderImageTwitter();
+  slogan = this.value;
+  renderImageTwitter();
      }
 });
 
 var quelleInput = document.getElementById('quelle');
 quelleInput.addEventListener('keyup', function() {
-     if (this.value.length > 1) {
-          quelle = this.value;
-          renderImageTwitter();
-     }
+  quelle = this.value;
+  renderImageTwitter();
 });
 
 // Set up filepicker button
