@@ -9,6 +9,10 @@ $boxShadow: rgba(0, 0, 0, 0.2) 0px 6px 8px -4px;
   src: url('../fonts/Hanoded-Plakkaat.woff') format('woff')
 }
 
+span.fontpreload {
+  font-family: 'Plakkaat';
+}
+
 .outputs {
   display: flex;
   margin-top: 2rem;
