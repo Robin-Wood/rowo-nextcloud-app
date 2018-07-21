@@ -7,7 +7,7 @@ style('robinwoodapp', 'style');
 <div id="app">
 	<div id="app-navigation">
 		<div id="app-settings-content">
-			<p>Dieses Werkzeug wandelt Bilder in schwarz-grüne Bilder für ROBIN WOOD-Veröffentlichungen um.</p>
+			<p>Dieses Werkzeug wandelt Bilder in schwarz-grüne Bilder für ROBIN WOOD-Veröffentlichungen um<span class="fontpreload">.</span></p>
 			<label>
 				<span>Bild-Datei</span>
 				<input type="file" name="file" id="file" accept="image/*" capture>
