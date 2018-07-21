@@ -4,6 +4,11 @@ $secondary: #cccccc;
 $canvasWidth: 1024px;
 $boxShadow: rgba(0, 0, 0, 0.2) 0px 6px 8px -4px;
 
+@font-face {
+  font-family: 'Plakkaat';
+  src: url('../fonts/Hanoded-Plakkaat.woff') format('woff')
+}
+
 .outputs {
   display: flex;
   margin-top: 2rem;
