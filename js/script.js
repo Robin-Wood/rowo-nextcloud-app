@@ -16,6 +16,7 @@ canvasTwitter.width = twitterWidth;
 canvasTwitter.height = twitterHeight;
 var ctxTwitter = canvasTwitter.getContext('2d');
 
+var slogan = "";
 
 // Pass image to render function
 function loadImage(src){
@@ -69,7 +70,7 @@ function renderTwitterText() {
   ctxTwitter.textAlign = "center";
   ctxTwitter.textBaselin = 'middle';
   ctxTwitter.font = '100px Plakkaat';
-  ctxTwitter.fillText("ENDE GELÄNDE", twitterWidth/2, twitterHeight/2);
+  ctxTwitter.fillText(slogan, twitterWidth/2, twitterHeight/2);
 }
 
 // Download contents on canvas using filesaver.js
@@ -121,6 +122,14 @@ target.addEventListener("drop", function(e){
 	loadImage(theImg);
   screenFade();
 }, true);
+
+var sloganInput = document.getElementById('slogan');
+sloganInput.addEventListener.on('keyup', function() {
+     if (this.value.length > 1) {
+          slogan = this.value;
+          renderImageTwitter();
+     }
+});
 
 // Set up filepicker button
 input.addEventListener("change", function(e) {
