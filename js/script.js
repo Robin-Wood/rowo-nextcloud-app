@@ -65,7 +65,7 @@ function renderImageTwitter(){
 }
 
 function renderTwitterText() {
-  ctxTwitter.textAlign = center;
+  ctxTwitter.textAlign = "center";
   ctxTwitter.fillText("ENDE GELÄNDE", twitterWidth, twitterHeight/2);
 }
 
