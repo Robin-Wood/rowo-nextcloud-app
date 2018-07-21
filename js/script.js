@@ -1,10 +1,12 @@
-// TODO: Add message for unsupported browsers.
+
 var canvas = document.getElementById('image'),
+    canvasTwitter = document.getElementById('twitter'),
     input = document.getElementById('file'),
     theImg,
     blendColor = "#a2c516",
     contrast = 1.2,
     ctx = canvas.getContext('2d'),
+    ctxTwitter = canvas.getContext('2d'),
     fadeTime = 120,
     currentFilter = 'grayscale(100%)',
     currentBlend = 'multiply';
@@ -14,6 +16,7 @@ function loadImage(src){
   var reader = new FileReader();
   reader.onload = function(e){
     render(e.target.result);
+    renderTwitter(e.target.result);
   };
   reader.readAsDataURL(src);
 }
@@ -22,7 +25,7 @@ function loadImage(src){
 // Draw image to canvas and apply filters
 function render(src){
   var image = new Image();
-  
+
   image.onload = function(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     canvas.width = image.width;
@@ -37,8 +40,26 @@ function render(src){
     //ctx.globalCompositeOperation = 'multiply';
     //ctx.fillStyle =
   };
-  
+
   image.src = src;
+}
+
+function renderTwitter(src){
+  var image = new Image();
+  image.onload = function(){
+    ctxTwitter.clearRect(0, 0, canvas.width, canvas.height);
+    canvas.width = image.width;
+    canvas.height = image.height;
+    ctxTwitter.fillStyle = blendColor;
+    ctxTwitter.fillRect(0,0,canvas.width,canvas.height);
+    // @TODO find solution for no .filter support in IE or Safari. Consider this approach: https://www.html5rocks.com/en/tutorials/canvas/imagefilters/
+    ctxTwitter.filter = currentFilter + ' contrast(' + contrast + ')';
+    ctxTwitter.globalCompositeOperation = currentBlend;
+    ctxTwitter.drawImage(image, 0, 0, image.width, image.height);
+    //var grd = ctx.createRadialGradient(75,50,5,90,60,100);
+    //ctx.globalCompositeOperation = 'multiply';
+    //ctx.fillStyle =
+  };
 }
 
 
@@ -86,7 +107,7 @@ function screenFade(){
 var target = document.getElementById('dropZone');
 target.addEventListener("dragover", function(e){e.preventDefault();}, true);
 target.addEventListener("drop", function(e){
-	e.preventDefault(); 
+	e.preventDefault();
   theImg = e.dataTransfer.files[0];
 	loadImage(theImg);
   screenFade();
