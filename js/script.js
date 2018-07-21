@@ -9,6 +9,9 @@ var input = document.getElementById('file'),
     currentFilter = 'grayscale(100%)',
     currentBlend = 'multiply';
 
+var canvasVanilla = document.getElementById('vanillaImage');
+var ctxVanilla = canvasVanilla.getContext('2d');
+
 var canvasTwitter = document.getElementById('twitterImage');
 canvasTwitter.width = twitterWidth;
 canvasTwitter.height = twitterHeight;
@@ -21,10 +24,29 @@ function loadImage(src){
   var reader = new FileReader();
   reader.onload = function(e){
     imageResult = e.target.result;
+    renderImageVanilla();
     renderImageTwitter();
   };
   reader.readAsDataURL(src);
 
+}
+
+function renderImageVanilla() {
+  var image = new Image();
+
+  image.onload = function() {
+    canvasVanilla.width = image.width;
+    canvasVanilla.height = image.height;
+    ctxVanilla.filter = 'none';
+    ctxVanilla.clearRect(0,0, canvasVanilla.width, canvasVanilla.height);
+    ctxVanilla.fillStyle = blendColor;
+    ctxVanilla.fillRect(0,0,canvasVanilla.width,canvasVanilla.height);
+    ctxVanilla.filter = currentFilter + ' contrast(1.4)';
+    ctxVanilla.globalCompositeOperation = currentBlend;
+    ctxVanilla.drawImage(image, 0, 0, image.width, image.height);
+    renderTwitterText();
+  };
+  image.src = imageResult;
 }
 
 function renderImageTwitter(){
