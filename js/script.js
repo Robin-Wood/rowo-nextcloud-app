@@ -66,7 +66,7 @@ function renderImageTwitter(){
 
 function renderTwitterText() {
   ctxTwitter.globalCompositeOperation = "sourceOver";
-  context.fillStyle = 'white';
+  ctxTwitter.fillStyle = 'white';
   ctxTwitter.textAlign = "center";
   ctxTwitter.fillText("ENDE GELÄNDE", twitterWidth, twitterHeight/2);
 }
