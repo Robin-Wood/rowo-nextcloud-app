@@ -50,9 +50,9 @@ function renderImageTwitter(){
   var twitterImage = new Image();
 
   twitterImage.onload = function() {
-    //ctxTwitter.clearRect(0,0, canvasTwitter.width, canvasTwitter.height);
+    ctxTwitter.clearRect(0,0, canvasTwitter.width, canvasTwitter.height);
     ctxTwitter.fillStyle = blendColor;
-    //ctxTwitter.fillRect(0,0,canvasTwitter.width,canvasTwitter.height);
+    ctxTwitter.fillRect(0,0,canvasTwitter.width,canvasTwitter.height);
     //ctxTwitter.drawImage(twitterImage, 0, 0, twitterImage.width, twitterImage.height);
   };
   twitterImage.src = imageResult;
