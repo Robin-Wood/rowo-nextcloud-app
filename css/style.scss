@@ -4,6 +4,15 @@ $secondary: #cccccc;
 $canvasWidth: 1024px;
 $boxShadow: rgba(0, 0, 0, 0.2) 0px 6px 8px -4px;
 
+.outputs {
+  display: flex;
+  margin-top: 2rem;
+
+  .imageBox {
+    flex-basis: auto;
+  }
+}
+
 .controls {
   background: #f5f5f5;
   padding: 10px;
