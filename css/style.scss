@@ -13,20 +13,21 @@ span.fontpreload {
   font-family: 'Plakkaat';
 }
 
-.app-robinwoodapp #app-settings-content {
-  display: block;
+.app-robinwoodapp {
 
-  input[type='file'] {
-    width: 93%;
-  }
-}
+  #app-settings-content {
+    display: block;
 
-.outputs {
-  display: flex;
-  margin-top: 2rem;
+    input[type='file'] {
+      width: 93%;
+    }
 
-  .imageBox {
-    flex-basis: auto;
+  .section {
+    display: flex;
+
+    .imageBox {
+      flex-basis: auto;
+    }
   }
 }
 
@@ -61,10 +62,6 @@ span.fontpreload {
 
 .screen {
   width: 100%;
-
-  .screen2 {
-    display: none;
-  }
 
   &__elements {
     margin: 10px auto 40px;
