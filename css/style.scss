@@ -2,7 +2,6 @@ $fontColor: #4a4a4a;
 $primary: #08aac7;
 $secondary: #cccccc;
 $canvasWidth: 1024px;
-$boxShadow: rgba(0, 0, 0, 0.2) 0px 6px 8px -4px;
 
 @font-face {
   font-family: 'Plakkaat';
@@ -26,33 +25,29 @@ span.fontpreload {
       display: flex;
 
       .imageBox {
+        box-shadow: 0 0 3px #adadad;
         flex-basis: auto;
+
+        .controls {
+          background: #f5f5f5;
+          padding: 10px;
+
+          button {
+            float: right;
+          }
+        }
       }
     }
   }
 }
 
-.controls {
-  background: #f5f5f5;
-  padding: 10px;
-}
+
 
 .imageBox {
-  box-shadow: 0 0 3px #adadad;
   margin: auto;
   max-width: 1024px;
   width: 100%;
 
-  #dropZone {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    height: 50vh;
-    transition: opacity 0.3s ease-in-out;
-    div {
-	text-align: center;
-}
-  }
 
   .finalImage {
     display: block;
@@ -68,20 +63,5 @@ span.fontpreload {
     margin: 10px auto 40px;
     max-width: $canvasWidth;
     width: 100%;
-  }
-}
-
-
-
-.finalImage {
-  box-shadow: $boxShadow;
-  height: auto;
-
-  &#image {
-    opacity: 0;
-  }
-
-  &#snapshot {
-    opacity: 1;
   }
 }
