@@ -68,7 +68,8 @@ function renderTwitterText() {
   ctxTwitter.globalCompositeOperation = 'source-over';
   ctxTwitter.fillStyle = 'white';
   ctxTwitter.textAlign = "center";
-  ctxTwitter.fillText("ENDE GELÄNDE", twitterWidth, twitterHeight/2);
+  ctxTwitter.font = '150pt Plakaat'
+  ctxTwitter.fillText("ENDE GELÄNDE", twitterWidth/2, twitterHeight/2);
 }
 
 // Download contents on canvas using filesaver.js
