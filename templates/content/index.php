@@ -1,7 +1,7 @@
 <div class="section screen">
 
   <div class="imageBox">
-    <div class="card-up"
+    <div class="card-up">
       <canvas id="vanillaImage" class="finalImage"></canvas>
     </div>
     <div class="card-down">
