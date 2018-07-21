@@ -1,15 +1,19 @@
 
 var canvas = document.getElementById('image'),
-    canvasTwitter = document.getElementById('twitter'),
     input = document.getElementById('file'),
     theImg,
     imageResult,
     blendColor = "#a2c516",
     ctx = canvas.getContext('2d'),
-    ctxTwitter = canvasTwitter.getContext('2d'),
     fadeTime = 120,
     currentFilter = 'grayscale(100%)',
     currentBlend = 'multiply';
+
+var canvasTwitter = document.getElementById('twitter');
+canvasTwitter.width = 1200;
+canvasTwitter.height = 634;
+var ctxTwitter = canvasTwitter.getContext('2d');
+
 
 // Pass image to render function
 function loadImage(src){
@@ -48,6 +52,7 @@ function renderImageTwitter(){
   twitterImage.onload = function() {
     ctxTwitter.clearRect(0,0, canvasTwitter.width, canvasTwitter.height);
     ctxTwitter.fillStyle = blendColor;
+    ctxTwitter.fillRect(0,0,canvasTwitter.width,canvasTwitter.height);
     ctxTwitter.drawImage(twitterImage, 0, 0, twitterImage.width, twitterImage.height)
   };
   twitterImage.src = imageResult;
