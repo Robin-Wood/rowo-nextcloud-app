@@ -34,7 +34,7 @@ function renderImage(){
     canvas.height = image.height;
     ctx.fillStyle = blendColor;
     ctx.fillRect(0,0,canvas.width,canvas.height);
-    ctx.filter = currentFilter + ' contrast('1.2')';
+    ctx.filter = currentFilter + ' contrast(1.2)';
     ctx.globalCompositeOperation = currentBlend;
     ctx.drawImage(image, 0, 0, image.width, image.height);
   };
