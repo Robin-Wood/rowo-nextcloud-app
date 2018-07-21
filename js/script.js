@@ -3,6 +3,7 @@ var canvas = document.getElementById('image'),
     canvasTwitter = document.getElementById('twitter'),
     input = document.getElementById('file'),
     theImg,
+    imageResult,
     blendColor = "#a2c516",
     contrast = 1.2,
     ctx = canvas.getContext('2d'),
@@ -15,14 +16,16 @@ var canvas = document.getElementById('image'),
 function loadImage(src){
   var reader = new FileReader();
   reader.onload = function(e){
-    renderImage(e.target.result);
+    imageResult = e.target.result;
+    renderImage();
   };
   reader.readAsDataURL(src);
+
 }
 
 
 // Draw image to canvas and apply filters
-function renderImage(src){
+function renderImage(){
   var image = new Image();
 
   image.onload = function(){
