@@ -9,7 +9,7 @@ var canvas = document.getElementById('image'),
     currentFilter = 'grayscale(100%)',
     currentBlend = 'multiply';
 
-var canvasTwitter = document.getElementById('twitter');
+var canvasTwitter = document.getElementById('twitterImage');
 canvasTwitter.width = 1200;
 canvasTwitter.height = 634;
 var ctxTwitter = canvasTwitter.getContext('2d');
