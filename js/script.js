@@ -10,7 +10,7 @@ var input = document.getElementById('file'),
     currentBlend = 'multiply';
 
 var logo = new Image();
-logo.src = '../img/logo.png';
+logo.src = 'img/logo.png';
 
 var canvasVanilla = document.getElementById('vanillaImage');
 var ctxVanilla = canvasVanilla.getContext('2d');
