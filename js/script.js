@@ -45,8 +45,8 @@ function render(src){
 }
 
 function renderTwitter(src){
-  var image = new Image();
-  image.onload = function(){
+  var imageTwitter = new Image();
+  imageTwitter.onload = function(){
     ctxTwitter.clearRect(0, 0, canvas.width, canvas.height);
     canvas.width = image.width;
     canvas.height = image.height;
@@ -60,7 +60,7 @@ function renderTwitter(src){
     //ctx.globalCompositeOperation = 'multiply';
     //ctx.fillStyle =
   };
-  image.src = src;
+  imageTwitter.src = src;
 }
 
 
