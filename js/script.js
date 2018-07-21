@@ -1,6 +1,7 @@
 const twitterWidth = 1024;
 const twitterHeight = 512;
 
+var font = new FontFace('Plakaat', '../fonts/Hanoded-Plakkaat.woff');
 
 var canvas = document.getElementById('image'),
     input = document.getElementById('file'),
@@ -68,7 +69,7 @@ function renderTwitterText() {
   ctxTwitter.globalCompositeOperation = 'source-over';
   ctxTwitter.fillStyle = 'white';
   ctxTwitter.textAlign = "center";
-  ctxTwitter.font = '150pt Plakaat'
+  ctxTwitter.font = '150px Plakaat'
   ctxTwitter.fillText("ENDE GELÄNDE", twitterWidth/2, twitterHeight/2);
 }
 
