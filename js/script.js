@@ -9,6 +9,9 @@ var input = document.getElementById('file'),
     currentFilter = 'grayscale(100%)',
     currentBlend = 'multiply';
 
+var logo = new Image();
+logo.src = '../images/logo.png'
+
 var canvasVanilla = document.getElementById('vanillaImage');
 var ctxVanilla = canvasVanilla.getContext('2d');
 
@@ -70,6 +73,7 @@ function renderTwitterText() {
   ctxTwitter.fillStyle = 'white';
   ctxTwitter.textBaseline = 'middle';
 
+  ctxTwitter.drawImage(logo,308,414,408,66);
   if(slogan.length > 0) {
     ctxTwitter.textAlign = "center";
     ctxTwitter.font = '100px Plakkaat';
