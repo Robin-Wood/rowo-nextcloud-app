@@ -16,14 +16,13 @@ function loadImage(src){
   var reader = new FileReader();
   reader.onload = function(e){
     render(e.target.result);
-    renderTwitter(e.target.result);
   };
   reader.readAsDataURL(src);
 }
 
 
 // Draw image to canvas and apply filters
-function render(src){
+function renderImage(src){
   var image = new Image();
 
   image.onload = function(){
@@ -38,21 +37,6 @@ function render(src){
   };
 
   image.src = src;
-}
-
-function renderTwitter(src){
-  var imageTwitter = new Image();
-  imageTwitter.onload = function(){
-    ctxTwitter.clearRect(0, 0, canvas.width, canvas.height);
-    canvas.width = imageTwitter.width;
-    canvas.height = imageTwitter.height;
-    ctxTwitter.fillStyle = blendColor;
-    ctxTwitter.fillRect(0,0,canvas.width,canvas.height);
-    ctxTwitter.filter = currentFilter + ' contrast(' + contrast + ')';
-    ctxTwitter.globalCompositeOperation = currentBlend;
-    ctxTwitter.drawImage(imageTwitter, 0, 0, imageTwitter.width, imageTwitter.height);
-  };
-  imageTwitter.src = src;
 }
 
 
