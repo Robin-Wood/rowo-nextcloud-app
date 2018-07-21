@@ -53,6 +53,7 @@ function renderImageTwitter(){
   var twitterImage = new Image();
 
   twitterImage.onload = function() {
+    ctxTwitter.filter = '';
     ctxTwitter.clearRect(0,0, canvasTwitter.width, canvasTwitter.height);
     ctxTwitter.fillStyle = blendColor;
     ctxTwitter.fillRect(0,0,canvasTwitter.width,canvasTwitter.height);
@@ -68,7 +69,7 @@ function renderTwitterText() {
   ctxTwitter.globalCompositeOperation = 'source-over';
   ctxTwitter.fillStyle = 'white';
   ctxTwitter.textAlign = "center";
-  ctxTwitter.textBaselin = 'middle';
+  ctxTwitter.textBaseline = 'middle';
   ctxTwitter.font = '100px Plakkaat';
   ctxTwitter.fillText(slogan, twitterWidth/2, twitterHeight/2);
 }
