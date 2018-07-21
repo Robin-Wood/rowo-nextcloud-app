@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+    <id>robinwoodapp</id>
+    <name>ROBIN WOOD-App</name>
+    <summary>alles mögliche</summary>
+    <description><![CDATA[alles mögliche]]></description>
+    <version>0.1</version>
+    <licence>agpl</licence>
+    <author mail="it@robinwood.de" >Tim Christensen</author>
+    <namespace>RobinWoodApp</namespace>
+    <category>tools</category>
+    <bugs>https://aktiv.robinwood.de</bugs>
+    <dependencies>
+        <nextcloud min-version="13" max-version="13"/>
+    </dependencies>
+    <navigations>
+        <navigation>
+            <name>Bild-Generator</name>
+            <route>robinwoodapp.page.index</route>
+        </navigation>
+    </navigations>
+</info>

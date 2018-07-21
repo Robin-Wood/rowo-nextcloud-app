@@ -1,0 +1,15 @@
+{
+    "name": "Robin Wood App",
+    "description": "alles mögliche",
+    "type": "project",
+    "license": "AGPL",
+    "authors": [
+        {
+            "name": "Tim Christensen"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^5.4"
+    }
+}
