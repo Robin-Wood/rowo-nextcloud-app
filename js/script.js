@@ -44,7 +44,12 @@ function renderImage(){
 
 function renderImageTwitter(){
   var twitterImage = new Image();
-  console.log("Test");
+
+  twitterImage.onload = function() {}
+    ctxTwitter.clearRect(0,0, canvasTwitter.width, canvasTwitter.height);
+    ctx.fillStyle = blendColor;
+  };
+  twitterImage.src = imageResult;
 }
 
 // Download contents on canvas using filesaver.js
