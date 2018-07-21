@@ -1,4 +1,10 @@
 <div class="section screen">
+  <div class="inputs">
+    <label>
+      <span>Slogan</span>
+      <input type="text" id="slogan" />
+    </label>
+  </div>
   <div class="screen1">
     <div class="imageBox">
       <div id="dropZone">
