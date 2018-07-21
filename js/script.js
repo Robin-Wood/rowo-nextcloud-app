@@ -100,7 +100,6 @@ var sloganInput = document.getElementById('slogan');
 sloganInput.addEventListener('keyup', function() {
   slogan = this.value;
   renderImageTwitter();
-     }
 });
 
 var quelleInput = document.getElementById('quelle');
