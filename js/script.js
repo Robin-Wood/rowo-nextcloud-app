@@ -32,13 +32,9 @@ function render(src){
     canvas.height = image.height;
     ctx.fillStyle = blendColor;
     ctx.fillRect(0,0,canvas.width,canvas.height);
-    // @TODO find solution for no .filter support in IE or Safari. Consider this approach: https://www.html5rocks.com/en/tutorials/canvas/imagefilters/
     ctx.filter = currentFilter + ' contrast(' + contrast + ')';
     ctx.globalCompositeOperation = currentBlend;
     ctx.drawImage(image, 0, 0, image.width, image.height);
-    //var grd = ctx.createRadialGradient(75,50,5,90,60,100);
-    //ctx.globalCompositeOperation = 'multiply';
-    //ctx.fillStyle =
   };
 
   image.src = src;
@@ -48,17 +44,13 @@ function renderTwitter(src){
   var imageTwitter = new Image();
   imageTwitter.onload = function(){
     ctxTwitter.clearRect(0, 0, canvas.width, canvas.height);
-    canvas.width = image.width;
-    canvas.height = image.height;
+    canvas.width = imageTwitter.width;
+    canvas.height = imageTwitter.height;
     ctxTwitter.fillStyle = blendColor;
     ctxTwitter.fillRect(0,0,canvas.width,canvas.height);
-    // @TODO find solution for no .filter support in IE or Safari. Consider this approach: https://www.html5rocks.com/en/tutorials/canvas/imagefilters/
     ctxTwitter.filter = currentFilter + ' contrast(' + contrast + ')';
     ctxTwitter.globalCompositeOperation = currentBlend;
-    ctxTwitter.drawImage(image, 0, 0, image.width, image.height);
-    //var grd = ctx.createRadialGradient(75,50,5,90,60,100);
-    //ctx.globalCompositeOperation = 'multiply';
-    //ctx.fillStyle =
+    ctxTwitter.drawImage(imageTwitter, 0, 0, imageTwitter.width, imageTwitter.height);
   };
   imageTwitter.src = src;
 }
