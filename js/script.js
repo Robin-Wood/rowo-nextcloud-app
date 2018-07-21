@@ -73,7 +73,7 @@ function renderTwitterText() {
   ctxTwitter.fillStyle = 'white';
   ctxTwitter.textBaseline = 'middle';
 
-  ctxTwitter.drawImage(logo,308,414,408,66);
+  //ctxTwitter.drawImage(logo,308,414,408,66);
   if(slogan.length > 0) {
     ctxTwitter.textAlign = "center";
     ctxTwitter.font = '100px Plakkaat';
