@@ -1,12 +1,10 @@
 const twitterWidth = 1024;
 const twitterHeight = 512;
 
-var canvas = document.getElementById('image'),
-    input = document.getElementById('file'),
+var input = document.getElementById('file'),
     theImg,
     imageResult,
     blendColor = "#a2c516",
-    ctx = canvas.getContext('2d'),
     fadeTime = 120,
     currentFilter = 'grayscale(100%)',
     currentBlend = 'multiply';
@@ -23,30 +21,10 @@ function loadImage(src){
   var reader = new FileReader();
   reader.onload = function(e){
     imageResult = e.target.result;
-    renderImage();
     renderImageTwitter();
   };
   reader.readAsDataURL(src);
 
-}
-
-
-// Draw image to canvas and apply filters
-function renderImage(){
-  var image = new Image();
-
-  image.onload = function(){
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    canvas.width = image.width;
-    canvas.height = image.height;
-    ctx.fillStyle = blendColor;
-    ctx.fillRect(0,0,canvas.width,canvas.height);
-    ctx.filter = currentFilter + ' contrast(1.2)';
-    ctx.globalCompositeOperation = currentBlend;
-    ctx.drawImage(image, 0, 0, image.width, image.height);
-  };
-
-  image.src = imageResult;
 }
 
 function renderImageTwitter(){
