@@ -15,7 +15,7 @@ var canvas = document.getElementById('image'),
 function loadImage(src){
   var reader = new FileReader();
   reader.onload = function(e){
-    render(e.target.result);
+    renderImage(e.target.result);
   };
   reader.readAsDataURL(src);
 }
