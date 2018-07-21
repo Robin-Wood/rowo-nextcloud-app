@@ -1,7 +1,7 @@
 const twitterWidth = 1024;
 const twitterHeight = 512;
 
-var font = new FontFace('Plakaat', '../fonts/Hanoded-Plakkaat.woff');
+var font = new FontFace('Plakaat', 'url(../fonts/Hanoded-Plakkaat.woff)');
 
 var canvas = document.getElementById('image'),
     input = document.getElementById('file'),
