@@ -25,7 +25,7 @@
 
   <div class="outputs">
     <div class="imageBox">
-      <canvas id="twitter" class="finalImage"></canvas>
+      <canvas id="twitterImage" class="finalImage"></canvas>
     </div>
   </div>
 </div>
