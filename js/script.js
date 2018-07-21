@@ -47,7 +47,8 @@ function renderImageTwitter(){
 
   twitterImage.onload = function() {
     ctxTwitter.clearRect(0,0, canvasTwitter.width, canvasTwitter.height);
-    ctx.fillStyle = blendColor;
+    ctxTwitter.fillStyle = blendColor;
+    ctxTwitter.drawImage(twitterImage, 0, 0, twitterImage.width, twitterImage.height)
   };
   twitterImage.src = imageResult;
 }
