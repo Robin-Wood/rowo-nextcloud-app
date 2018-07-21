@@ -16,6 +16,10 @@ style('robinwoodapp', 'style');
 				<span>Slogan</span>
 				<input type="text" id="slogan" />
 			</label>
+			<label>
+				<span>Bildquelle</span>
+				<input type="text" id="quelle" />
+			</label>
 		</div>
 	</div>
 	<div id="app-content">

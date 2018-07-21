@@ -18,6 +18,7 @@ canvasTwitter.height = twitterHeight;
 var ctxTwitter = canvasTwitter.getContext('2d');
 
 var slogan = "";
+var quelle = "";
 
 // Pass image to render function
 function loadImage(src){
@@ -41,7 +42,7 @@ function renderImageVanilla() {
     ctxVanilla.clearRect(0,0, canvasVanilla.width, canvasVanilla.height);
     ctxVanilla.fillStyle = blendColor;
     ctxVanilla.fillRect(0,0,canvasVanilla.width,canvasVanilla.height);
-    ctxVanilla.filter = currentFilter + ' contrast(1.4)';
+    ctxVanilla.filter = currentFilter + ' contrast(1.2)';
     ctxVanilla.globalCompositeOperation = currentBlend;
     ctxVanilla.drawImage(image, 0, 0, image.width, image.height);
   };
@@ -67,10 +68,18 @@ function renderImageTwitter(){
 function renderTwitterText() {
   ctxTwitter.globalCompositeOperation = 'source-over';
   ctxTwitter.fillStyle = 'white';
-  ctxTwitter.textAlign = "center";
   ctxTwitter.textBaseline = 'middle';
-  ctxTwitter.font = '100px Plakkaat';
-  ctxTwitter.fillText(slogan, twitterWidth/2, twitterHeight/2);
+
+  if(slogan.length > 0) {
+    ctxTwitter.textAlign = "center";
+    ctxTwitter.font = '100px Plakkaat';
+    ctxTwitter.fillText(slogan, twitterWidth/2, twitterHeight/2);
+  }
+  if(quelle.length > 0) {
+    ctxTwitter.textAlign = "left";
+    ctxTwitter.font = '18px MarkOT';
+    ctxTwitter.fillText('Foto: ' + quelle, 32, 489);
+  }
 }
 
 // Download contents on canvas using filesaver.js
@@ -91,6 +100,14 @@ var sloganInput = document.getElementById('slogan');
 sloganInput.addEventListener('keyup', function() {
      if (this.value.length > 1) {
           slogan = this.value;
+          renderImageTwitter();
+     }
+});
+
+var quelleInput = document.getElementById('quelle');
+quelleInput.addEventListener('keyup', function() {
+     if (this.value.length > 1) {
+          quelle = this.value;
           renderImageTwitter();
      }
 });
