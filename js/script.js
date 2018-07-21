@@ -60,6 +60,7 @@ function renderTwitter(src){
     //ctx.globalCompositeOperation = 'multiply';
     //ctx.fillStyle =
   };
+  image.src = src;
 }
 
 
