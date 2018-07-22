@@ -17,6 +17,10 @@ span.fontpreload {
   #app-settings-content {
     display: block;
 
+    p {
+      margin-bottom: 0.5rem;
+    }
+
     input[type='file'] {
       width: 93%;
     }
@@ -41,8 +45,13 @@ span.fontpreload {
         }
 
         .card-down {
-          height: 60px;
-          padding: 10px;
+          height: 50px;
+          padding: 5px;
+
+          span {
+            display: inline-block;
+            margin: 10px;
+          }
 
           button {
             float: right;

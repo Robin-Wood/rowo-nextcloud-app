@@ -98,7 +98,7 @@ document.getElementById("downloadItVanilla").onclick = function() {
 document.getElementById("downloadItTwitter").onclick = function() {
   canvasTwitter.toBlob(function(blob) {
     saveAs(blob, "image.jpg");
-  }, "image/jpeg", 0.9);
+  }, "image/jpeg", 0.95);
 }
 
 
