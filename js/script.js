@@ -126,9 +126,11 @@ function renderImageTwitterZ(ctx){
 
 // Download contents on canvas using filesaver.js
 function download(canvas) {
-  canvas.toBlob(function(blob) {
-    saveAs(blob, "image.jpg");
-  }, "image/jpeg", 0.95);
+  return function() {}
+    canvas.toBlob(function(blob) {
+      saveAs(blob, "image.jpg");
+    }, "image/jpeg", 0.95);
+  }
 }
 document.getElementById("downloadItVanilla").onclick = download(canvasVanilla);
 document.getElementById("downloadItTwitter").onclick = download(canvasTwitter);
