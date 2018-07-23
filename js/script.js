@@ -176,7 +176,7 @@ document.getElementById("downloadItTwitterZitat").onclick = download(canvasTwitt
 
 var sloganInput = document.getElementById('slogan');
 sloganInput.addEventListener('keyup', function() {
-  slogan = this.value.replace("-","- ").replace("!", "! ");
+  slogan = this.value.replace(/[.?!-]/g,"$& ").replace("!", "! ");
   renderImageTwitter(ctxTwitter);
 });
 
