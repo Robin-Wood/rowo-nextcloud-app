@@ -23,7 +23,7 @@ canvasTwitter.width = twitterWidth;
 canvasTwitter.height = twitterHeight;
 var ctxTwitter = canvasTwitter.getContext('2d');
 
-var canvasTwitter = document.getElementById('twitterZitatImage');
+var canvasTwitterZ = document.getElementById('twitterZitatImage');
 canvasTwitterZ.width = twitterWidth;
 canvasTwitterZ.height = twitterHeight;
 var ctxTwitterZ = canvasTwitterZ.getContext('2d');
