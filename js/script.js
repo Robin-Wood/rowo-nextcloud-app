@@ -112,8 +112,9 @@ function renderImageTwitterZ(ctx){
 
     if(quelle.length > 0) {
       ctx.fillStyle = "black";
-      ctx.globalAlpha=0.35;
+      ctx.globalAlpha=0.3;
       ctx.fillRect(0, twitterHeight-54, twitterWidth*0.51, 54);
+      ctx.fillStyle = "white";
       ctx.globalAlpha=1;
       ctx.textAlign = "left";
       ctx.font = '18px MarkOT';
@@ -124,17 +125,14 @@ function renderImageTwitterZ(ctx){
 }
 
 // Download contents on canvas using filesaver.js
-document.getElementById("downloadItVanilla").onclick = function() {
-  canvasVanilla.toBlob(function(blob) {
-    saveAs(blob, "image.jpg");
-  }, "image/jpeg", 0.9);
-}
-
-document.getElementById("downloadItTwitter").onclick = function() {
-  canvasTwitter.toBlob(function(blob) {
+function download(canvas) {
+  canvas.toBlob(function(blob) {
     saveAs(blob, "image.jpg");
   }, "image/jpeg", 0.95);
 }
+document.getElementById("downloadItVanilla").onclick = download(canvasVanilla);
+document.getElementById("downloadItTwitter").onclick = download(canvasTwitter);
+document.getElementById("downloadItTwitterZ").onclick = download(canvasTwitterZ);
 
 
 var sloganInput = document.getElementById('slogan');
