@@ -162,7 +162,7 @@ function renderImageTwitterZ(ctx){
       ctx.fillStyle = "white";
       ctx.textAlign = "left";
       ctx.font = 'bold 21px MarkOT';
-      ctx.fillText('Foto: ' + quelle, twitterWidth*0.53, twitterHeight*0.56);
+      ctx.fillText(zitatgeberin, twitterWidth*0.53, twitterHeight*0.56);
     }
   };
   image.src = imageResult;
