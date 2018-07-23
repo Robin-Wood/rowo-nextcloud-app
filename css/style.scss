@@ -18,7 +18,13 @@ span.fontpreload {
     display: block;
 
     p {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    strong {
+      display: inline-block;
+      margin-bottom: 0.6rem;
+      margin-top: 1rem;
     }
 
     input[type='file'] {

@@ -13,13 +13,15 @@ style('robinwoodapp', 'style');
 				<input type="file" name="file" id="file" accept="image/*" capture>
 			</label>
 			<label>
-				<span>Slogan</span>
-				<input type="text" id="slogan" />
-			</label>
-			<label>
 				<span>Bildquelle</span>
 				<input type="text" id="quelle" />
 			</label>
+			<strong>Slogan</strong>
+			<label>
+				<span>Slogan</span>
+				<input type="text" id="slogan" />
+			</label>
+			<strong>Zitatbox</strong>
 		</div>
 	</div>
 	<div id="app-content">
