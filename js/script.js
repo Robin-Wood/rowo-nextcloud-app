@@ -80,12 +80,19 @@ function renderImageTwitter(ctx){
     ctx.drawImage(logo,330,414,364,364/logoRatio);
     if(slogan.length > 0) {
       ctx.textAlign = "center";
-      ctx.font = '100px Plakkaat';
-      const length = ctx.measureText(slogan).width;
-      if (length < twitterWidth*0.8) {
+      ctx.font = '120px Plakkaat';
+      if (ctx.measureText(slogan).width; < twitterWidth*0.8) {
         ctx.fillText(slogan, twitterWidth/2, twitterHeight/2);
       } else {
-        console.log(length);
+        ctx.font = '100px Plakkaat';
+        if (ctx.measureText(slogan).width; < twitterWidth*0.8) {
+          ctx.fillText(slogan, twitterWidth/2, twitterHeight/2);
+        } else {
+          slogan1 = slogan;
+          slogan2 = slogan;
+          ctx.fillText(slogan1, twitterWidth/2, twitterHeight/2-60);
+          ctx.fillText(slogan2, twitterWidth/2, twitterHeight/2+60);
+        }
       }
     }
     if(quelle.length > 0) {

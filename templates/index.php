@@ -21,7 +21,7 @@ style('robinwoodapp', 'style');
 				<span>Slogan</span>
 				<input type="text" id="slogan" />
 			</label>
-			<strong>Zitatbox</strong>
+			<!--<strong>Zitatbox</strong>
 			<label>
 				<span>Zitat</span>
 				<input type="text" id="zitat" />
@@ -29,7 +29,7 @@ style('robinwoodapp', 'style');
 			<label>
 				<span>Zitatgeber*in</span>
 				<input type="text" id="zitatgeberin" />
-			</label>
+			</label>-->
 		</div>
 	</div>
 	<div id="app-content">
