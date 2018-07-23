@@ -90,7 +90,7 @@ function renderImageTwitter(ctx){
         } else {
           var words = slogan.split(" ");
           let slogan1 = words.shift();
-          while(ctx.measureText(slogan1).width <= ctx.measureText(slogan).width && words.length > 0) {
+          while(ctx.measureText(slogan1).width <= ctx.measureText(slogan).width/2 && words.length > 1) {
             slogan1 += " " + words.shift();
           }
           let slogan2 = words.join(" ");
