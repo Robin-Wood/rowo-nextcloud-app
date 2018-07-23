@@ -94,8 +94,12 @@ function renderImageTwitter(ctx){
             slogan1 += " " + words.shift();
           }
           let slogan2 = words.join(" ");
-          ctx.fillText(slogan1, twitterWidth/2, twitterHeight/2-55);
-          ctx.fillText(slogan2, twitterWidth/2, twitterHeight/2+55);
+          if(ctx.measureText(slogan2).width < twitterWidth*0.8) {
+            ctx.fillText(slogan1, twitterWidth/2, twitterHeight/2-55);
+            ctx.fillText(slogan2, twitterWidth/2, twitterHeight/2+55);
+          } else {
+
+          }
         }
       }
     }
