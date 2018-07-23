@@ -147,6 +147,7 @@ var quelleInput = document.getElementById('quelle');
 quelleInput.addEventListener('keyup', function() {
   quelle = this.value;
   renderImageTwitter(ctxTwitter);
+  renderImageTwitterZ(ctxTwitterZ);
 });
 
 // Set up filepicker button
