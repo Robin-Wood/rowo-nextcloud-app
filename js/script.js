@@ -87,7 +87,7 @@ function renderImageTwitter(ctx){
         ctx.font = '100px Plakkaat';
         if (ctx.measureText(slogan).width < twitterWidth*0.8) {
           ctx.fillText(slogan, twitterWidth/2, twitterHeight/2);
-        } else
+        } else {
           var words = slogan.split(" ");
           let slogan1 = words.shift();
           let slogan2 = words.join(" ");
