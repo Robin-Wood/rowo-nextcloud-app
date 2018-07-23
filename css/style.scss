@@ -16,13 +16,14 @@ span.fontpreload {
 
   #app-settings-content {
     display: block;
+    max-height: 100%;
 
     p {
       margin-bottom: 0.6rem;
     }
 
     strong {
-      display: inline-block;
+      display: block;
       margin-bottom: 0.6rem;
       margin-top: 1rem;
     }
