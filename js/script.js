@@ -88,7 +88,7 @@ function renderImageTwitter(ctx){
         if (ctx.measureText(slogan).width < twitterWidth*0.8) {
           ctx.fillText(slogan, twitterWidth/2, twitterHeight/2);
         } else
-          let words = slogan.split(" ");
+          var words = slogan.split(" ");
           let slogan1 = words.shift();
           let slogan2 = words.join(" ");
           ctx.fillText(slogan1, twitterWidth/2, twitterHeight/2-60);
