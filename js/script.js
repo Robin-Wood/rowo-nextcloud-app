@@ -81,11 +81,11 @@ function renderImageTwitter(ctx){
     if(slogan.length > 0) {
       ctx.textAlign = "center";
       ctx.font = '120px Plakkaat';
-      if (ctx.measureText(slogan).width; < twitterWidth*0.8) {
+      if (ctx.measureText(slogan).width < twitterWidth*0.8) {
         ctx.fillText(slogan, twitterWidth/2, twitterHeight/2);
       } else {
         ctx.font = '100px Plakkaat';
-        if (ctx.measureText(slogan).width; < twitterWidth*0.8) {
+        if (ctx.measureText(slogan).width < twitterWidth*0.8) {
           ctx.fillText(slogan, twitterWidth/2, twitterHeight/2);
         } else {
           slogan1 = slogan;
