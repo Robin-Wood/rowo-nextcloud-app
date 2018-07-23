@@ -72,32 +72,29 @@ function renderImageTwitter(ctx){
     ctx.filter = currentFilter + ' contrast(1.6)';
     ctx.globalCompositeOperation = currentBlend;
     drawImageProp(ctx, twitterImage, 0, 0, twitterWidth, twitterHeight);
-    renderTwitterText(ctx);
+
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.fillStyle = 'white';
+    ctx.textBaseline = 'middle';
+
+    ctx.drawImage(logo,330,414,364,364/logoRatio);
+    if(slogan.length > 0) {
+      ctx.textAlign = "center";
+      ctx.font = '100px Plakkaat';
+      const length = ctx.measureText(slogan);
+      if (length < twitterWidth*0.8) {
+        ctx.fillText(slogan, twitterWidth/2, twitterHeight/2);
+      } else {
+        console.log(length);
+      }
+    }
+    if(quelle.length > 0) {
+      ctx.textAlign = "left";
+      ctx.font = '18px MarkOT';
+      ctx.fillText('Foto: ' + quelle, 32, 489);
+    }
   };
   twitterImage.src = imageResult;
-}
-
-function renderTwitterText(ctx) {
-  ctx.globalCompositeOperation = 'source-over';
-  ctx.fillStyle = 'white';
-  ctx.textBaseline = 'middle';
-
-  ctx.drawImage(logo,330,414,364,364/logoRatio);
-  if(slogan.length > 0) {
-    ctx.textAlign = "center";
-    ctx.font = '100px Plakkaat';
-    const length = ctx.measureText(slogan);
-    if (length < twitterWidth*0.8) {
-      ctx.fillText(slogan, twitterWidth/2, twitterHeight/2);
-    } else {
-
-    }
-  }
-  if(quelle.length > 0) {
-    ctx.textAlign = "left";
-    ctx.font = '18px MarkOT';
-    ctx.fillText('Foto: ' + quelle, 32, 489);
-  }
 }
 
 function renderImageTwitterZ(ctx){
@@ -112,7 +109,7 @@ function renderImageTwitterZ(ctx){
 
     if(quelle.length > 0) {
       ctx.fillStyle = "black";
-      ctx.globalAlpha=0.3;
+      ctx.globalAlpha=0.35;
       ctx.fillRect(0, twitterHeight-54, twitterWidth*0.51, 54);
       ctx.fillStyle = "white";
       ctx.globalAlpha=1;
