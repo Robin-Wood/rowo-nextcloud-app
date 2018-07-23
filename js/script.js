@@ -80,16 +80,17 @@ function renderImageTwitter(ctx){
     ctx.drawImage(logo,330,414,364,364/logoRatio);
     if(slogan.length > 0) {
       ctx.textAlign = "center";
-      ctx.font = '120px Plakkaat';
+      ctx.font = '130px Plakkaat';
       if (ctx.measureText(slogan).width < twitterWidth*0.8) {
         ctx.fillText(slogan, twitterWidth/2, twitterHeight/2);
       } else {
         ctx.font = '100px Plakkaat';
         if (ctx.measureText(slogan).width < twitterWidth*0.8) {
           ctx.fillText(slogan, twitterWidth/2, twitterHeight/2);
-        } else {
-          slogan1 = slogan;
-          slogan2 = slogan;
+        } else
+          let words = slogan.split(" ");
+          let slogan1 = words.shift();
+          let slogan2 = words.join(" ");
           ctx.fillText(slogan1, twitterWidth/2, twitterHeight/2-60);
           ctx.fillText(slogan2, twitterWidth/2, twitterHeight/2+60);
         }
