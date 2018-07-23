@@ -24,4 +24,16 @@
     </div>
   </div>
 
+  <div class="flexBox">
+    <div class="imageBox">
+      <div class="card-up">
+        <canvas id="twitterZitatImage" class="finalImage"></canvas>
+      </div>
+      <div class="card-down">
+        <span>Twitter: Zitatbox Einzelperson</span>
+        <button id="downloadItTwitterZitat" class="primary">Herunterladen</button>
+      </div>
+    </div>
+  </div>
+
 </div>

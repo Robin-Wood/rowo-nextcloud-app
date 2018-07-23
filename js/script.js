@@ -1,3 +1,4 @@
+// Current optimal image sizes for Twitter
 const twitterWidth = 1024;
 const twitterHeight = 512;
 
@@ -21,6 +22,11 @@ var canvasTwitter = document.getElementById('twitterImage');
 canvasTwitter.width = twitterWidth;
 canvasTwitter.height = twitterHeight;
 var ctxTwitter = canvasTwitter.getContext('2d');
+
+var canvasTwitter = document.getElementById('twitterZitatImage');
+canvasTwitterZ.width = twitterWidth;
+canvasTwitterZ.height = twitterHeight;
+var ctxTwitterZ = canvasTwitterZ.getContext('2d');
 
 var slogan = "";
 var quelle = "";
@@ -86,6 +92,19 @@ function renderTwitterText() {
     ctxTwitter.font = '18px MarkOT';
     ctxTwitter.fillText('Foto: ' + quelle, 32, 489);
   }
+}
+
+function renderImageTwitter(){
+  var image = new Image();
+
+  image.onload = function() {
+    ctxTwitterZ.filter = 'none';
+    ctxTwitterZ.clearRect(0,0, canvasTwitterZ.width, canvasTwitterZ.height);
+    ctxTwitterZ.fillStyle = blendColor;
+    ctxTwitterZ.fillRect(0,0,canvasTwitterZ.width,canvasTwitterZ.height);
+    drawImageProp(ctxTwitterZ, image, 0, 0, twitterWidth*0.51, twitterHeight);
+  };
+  image.src = imageResult;
 }
 
 // Download contents on canvas using filesaver.js
