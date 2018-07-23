@@ -30,6 +30,10 @@ style('robinwoodapp', 'style');
 				<span>Zitatgeber*in</span>
 				<input type="text" id="zitatgeberin" />
 			</label>
+			<label>
+				<span>Zitatgeber*in Funktion</span>
+				<input type="text" id="zitatfunktion" />
+			</label>
 		</div>
 	</div>
 	<div id="app-content">

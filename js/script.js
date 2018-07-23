@@ -34,6 +34,7 @@ var ctxTwitterZ = canvasTwitterZ.getContext('2d');
 var slogan = "";
 var quelle = "";
 var zitatgeberin = "";
+var zitatfunktion = "";
 
 // Pass image to render function
 function loadImage(src){
@@ -159,10 +160,18 @@ function renderImageTwitterZ(ctx){
       ctx.fillText('Foto: ' + quelle, 32, 489);
     }
     if(zitatgeberin.length > 0) {
+      ctx.textBaseline = 'middle';
       ctx.fillStyle = "white";
       ctx.textAlign = "left";
       ctx.font = 'bold 21px MarkOT';
       ctx.fillText(zitatgeberin, twitterWidth*0.53, twitterHeight*0.56);
+    }
+    if(zitatfunktion.length > 0) {
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = "white";
+      ctx.textAlign = "left";
+      ctx.font = 'bold 21px MarkOT';
+      ctx.fillText(zitatfunktion, twitterWidth*0.53, twitterHeight*0.56+21*lineHeight);
     }
   };
   image.src = imageResult;
@@ -197,6 +206,11 @@ quelleInput.addEventListener('keyup', function() {
 var zitatgeberinInput = document.getElementById('zitatgeberin');
 zitatgeberinInput.addEventListener('keyup', function() {
   zitatgeberin = this.value;
+  renderImageTwitterZ(ctxTwitterZ);
+});
+var zitatfunktionInput = document.getElementById('zitatfunktion');
+zitatfunktionInput.addEventListener('keyup', function() {
+  zitatfunktion = this.value;
   renderImageTwitterZ(ctxTwitterZ);
 });
 
