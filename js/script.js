@@ -82,7 +82,7 @@ function renderImageTwitter(ctx){
     ctx.fillStyle = 'white';
     ctx.textBaseline = 'middle';
 
-    ctx.drawImage(logo,330,414,364,364/logoRatio);
+    ctx.drawImage(logo,330,414,360,360/logoRatio);
     if(slogan.length > 0) {
       ctx.textAlign = "center";
       ctx.font = '130px Plakkaat';
@@ -149,6 +149,8 @@ function renderImageTwitterZ(ctx){
     ctx.fillRect(0,0,canvasTwitterZ.width,canvasTwitterZ.height);
     drawImageProp(ctx, image, 0, 0, twitterWidth*0.51, twitterHeight);
 
+    ctx.drawImage(logo,twitterWidth*0.53,twitterHeight*0.84,360,360/logoRatio);
+
     if(quelle.length > 0) {
       ctx.fillStyle = "black";
       ctx.globalAlpha=0.35;
@@ -164,14 +166,14 @@ function renderImageTwitterZ(ctx){
       ctx.fillStyle = "white";
       ctx.textAlign = "left";
       ctx.font = 'bold 21px MarkOT';
-      ctx.fillText(zitatgeberin, twitterWidth*0.53, twitterHeight*0.56);
+      ctx.fillText(zitatgeberin, twitterWidth*0.53, twitterHeight*0.57);
     }
     if(zitatfunktion.length > 0) {
       ctx.textBaseline = 'middle';
       ctx.fillStyle = "white";
       ctx.textAlign = "left";
       ctx.font = 'bold 21px MarkOT';
-      ctx.fillText(zitatfunktion, twitterWidth*0.53, twitterHeight*0.56+21*lineHeight);
+      ctx.fillText(zitatfunktion, twitterWidth*0.53, twitterHeight*0.57+21*1.2);
     }
   };
   image.src = imageResult;
