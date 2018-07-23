@@ -117,7 +117,7 @@ function renderImageTwitter(ctx){
               while(ctx.measureText(slogan21).width < ctx.measureText(slogan2).width/2 && words.length > 1 && ctx.measureText(slogan21 + " " + words[0]).width < twitterWidth*margin) {
                 slogan21 += " " + words.shift();
               }
-              let slogan21 = words.join(" ");
+              let slogan22 = words.join(" ");
               if(ctx.measureText(slogan22).width < twitterWidth*margin) {
                 ctx.fillText(slogan1, twitterWidth/2, twitterHeight/2-10-80*lineHeight);
                 ctx.fillText(slogan21, twitterWidth/2, twitterHeight/2-10+80/2*lineHeight);
