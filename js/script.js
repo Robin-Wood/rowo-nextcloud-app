@@ -132,7 +132,7 @@ function download(canvas) {
 }
 document.getElementById("downloadItVanilla").onclick = download(canvasVanilla);
 document.getElementById("downloadItTwitter").onclick = download(canvasTwitter);
-document.getElementById("downloadItTwitterZ").onclick = download(canvasTwitterZ);
+document.getElementById("downloadItTwitterZitat").onclick = download(canvasTwitterZ);
 
 
 var sloganInput = document.getElementById('slogan');
