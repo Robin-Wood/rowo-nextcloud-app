@@ -81,7 +81,7 @@ function renderImageTwitter(ctx){
     if(slogan.length > 0) {
       ctx.textAlign = "center";
       ctx.font = '100px Plakkaat';
-      const length = ctx.measureText(slogan);
+      const length = ctx.measureText(slogan).width;
       if (length < twitterWidth*0.8) {
         ctx.fillText(slogan, twitterWidth/2, twitterHeight/2);
       } else {
