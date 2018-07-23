@@ -119,9 +119,9 @@ function renderImageTwitter(ctx){
               }
               let slogan22 = words.join(" ");
               if(ctx.measureText(slogan22).width < twitterWidth*margin) {
-                ctx.fillText(slogan1, twitterWidth/2, twitterHeight/2-10-80*lineHeight);
-                ctx.fillText(slogan21, twitterWidth/2, twitterHeight/2-10);
-                ctx.fillText(slogan22, twitterWidth/2, twitterHeight/2-10+80*lineHeight);
+                ctx.fillText(slogan1, twitterWidth/2, twitterHeight/2-15-80*lineHeight);
+                ctx.fillText(slogan21, twitterWidth/2, twitterHeight/2-15);
+                ctx.fillText(slogan22, twitterWidth/2, twitterHeight/2-15+80*lineHeight);
               }
             }
           }
@@ -176,7 +176,7 @@ document.getElementById("downloadItTwitterZitat").onclick = download(canvasTwitt
 
 var sloganInput = document.getElementById('slogan');
 sloganInput.addEventListener('keyup', function() {
-  slogan = this.value;
+  slogan = this.value.replace("-","- ").replace("!", "! ");
   renderImageTwitter(ctxTwitter);
 });
 
