@@ -36,74 +36,89 @@ function loadImage(src){
   var reader = new FileReader();
   reader.onload = function(e){
     imageResult = e.target.result;
-    renderImageVanilla();
-    renderImageTwitter();
-    renderImageTwitterZ();
+    renderImageVanilla(ctxVanilla);
+    renderImageTwitter(ctxTwitter);
+    renderImageTwitterZ(ctxTwitterZ);
   };
   reader.readAsDataURL(src);
 
 }
 
-function renderImageVanilla() {
+function renderImageVanilla(ctx) {
   var image = new Image();
 
   image.onload = function() {
     canvasVanilla.width = image.width;
     canvasVanilla.height = image.height;
-    ctxVanilla.filter = 'none';
-    ctxVanilla.clearRect(0,0, canvasVanilla.width, canvasVanilla.height);
-    ctxVanilla.fillStyle = blendColor;
-    ctxVanilla.fillRect(0,0,canvasVanilla.width,canvasVanilla.height);
-    ctxVanilla.filter = currentFilter + ' contrast(1.2)';
-    ctxVanilla.globalCompositeOperation = currentBlend;
-    ctxVanilla.drawImage(image, 0, 0, image.width, image.height);
+    ctx.filter = 'none';
+    ctx.clearRect(0,0, canvasVanilla.width, canvasVanilla.height);
+    ctx.fillStyle = blendColor;
+    ctx.fillRect(0,0,canvasVanilla.width,canvasVanilla.height);
+    ctx.filter = currentFilter + ' contrast(1.2)';
+    ctx.globalCompositeOperation = currentBlend;
+    ctx.drawImage(image, 0, 0, image.width, image.height);
   };
   image.src = imageResult;
 }
 
-function renderImageTwitter(){
+function renderImageTwitter(ctx){
   var twitterImage = new Image();
 
   twitterImage.onload = function() {
-    ctxTwitter.filter = 'none';
-    ctxTwitter.clearRect(0,0, canvasTwitter.width, canvasTwitter.height);
-    ctxTwitter.fillStyle = blendColor;
-    ctxTwitter.fillRect(0,0,canvasTwitter.width,canvasTwitter.height);
-    ctxTwitter.filter = currentFilter + ' contrast(1.6)';
-    ctxTwitter.globalCompositeOperation = currentBlend;
-    drawImageProp(ctxTwitter, twitterImage, 0, 0, twitterWidth, twitterHeight);
-    renderTwitterText();
+    ctx.filter = 'none';
+    ctx.clearRect(0,0, canvasTwitter.width, canvasTwitter.height);
+    ctx.fillStyle = blendColor;
+    ctx.fillRect(0,0,canvasTwitter.width,canvasTwitter.height);
+    ctx.filter = currentFilter + ' contrast(1.6)';
+    ctx.globalCompositeOperation = currentBlend;
+    drawImageProp(ctx, twitterImage, 0, 0, twitterWidth, twitterHeight);
+    renderTwitterText(ctx);
   };
   twitterImage.src = imageResult;
 }
 
-function renderTwitterText() {
-  ctxTwitter.globalCompositeOperation = 'source-over';
-  ctxTwitter.fillStyle = 'white';
-  ctxTwitter.textBaseline = 'middle';
+function renderTwitterText(ctx) {
+  ctx.globalCompositeOperation = 'source-over';
+  ctx.fillStyle = 'white';
+  ctx.textBaseline = 'middle';
 
-  ctxTwitter.drawImage(logo,330,414,364,364/logoRatio);
+  ctx.drawImage(logo,330,414,364,364/logoRatio);
   if(slogan.length > 0) {
-    ctxTwitter.textAlign = "center";
-    ctxTwitter.font = '100px Plakkaat';
-    ctxTwitter.fillText(slogan, twitterWidth/2, twitterHeight/2);
+    ctx.textAlign = "center";
+    ctx.font = '100px Plakkaat';
+    const length = ctx.measureText(slogan);
+    if (length < twitterWidth*0.8) {
+      ctx.fillText(slogan, twitterWidth/2, twitterHeight/2);
+    } else {
+
+    }
   }
   if(quelle.length > 0) {
-    ctxTwitter.textAlign = "left";
-    ctxTwitter.font = '18px MarkOT';
-    ctxTwitter.fillText('Foto: ' + quelle, 32, 489);
+    ctx.textAlign = "left";
+    ctx.font = '18px MarkOT';
+    ctx.fillText('Foto: ' + quelle, 32, 489);
   }
 }
 
-function renderImageTwitterZ(){
+function renderImageTwitterZ(ctx){
   var image = new Image();
 
   image.onload = function() {
-    ctxTwitterZ.filter = 'none';
-    ctxTwitterZ.clearRect(0,0, canvasTwitterZ.width, canvasTwitterZ.height);
-    ctxTwitterZ.fillStyle = blendColor;
-    ctxTwitterZ.fillRect(0,0,canvasTwitterZ.width,canvasTwitterZ.height);
-    drawImageProp(ctxTwitterZ, image, 0, 0, twitterWidth*0.51, twitterHeight);
+    ctx.filter = 'none';
+    ctx.clearRect(0,0, canvasTwitterZ.width, canvasTwitterZ.height);
+    ctx.fillStyle = blendColor;
+    ctx.fillRect(0,0,canvasTwitterZ.width,canvasTwitterZ.height);
+    drawImageProp(ctx, image, 0, 0, twitterWidth*0.51, twitterHeight);
+
+    if(quelle.length > 0) {
+      ctx.fillStyle = "black";
+      ctx.globalAlpha=0.35;
+      ctx.fillRect(0, twitterHeight-54, twitterWidth*0.51, 54);
+      ctx.globalAlpha=1;
+      ctx.textAlign = "left";
+      ctx.font = '18px MarkOT';
+      ctx.fillText('Foto: ' + quelle, 32, 489);
+    }
   };
   image.src = imageResult;
 }
