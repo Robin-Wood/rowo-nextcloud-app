@@ -5,6 +5,7 @@ const twitterHeight = 512;
 const logoRatio = 6.17283950617284;
 
 const lineHeight = 1.1;
+const margin = 0.85;
 
 var input = document.getElementById('file'),
     theImg,
@@ -83,31 +84,31 @@ function renderImageTwitter(ctx){
     if(slogan.length > 0) {
       ctx.textAlign = "center";
       ctx.font = '130px Plakkaat';
-      if (ctx.measureText(slogan).width < twitterWidth*0.8) {
+      if (ctx.measureText(slogan).width < twitterWidth*0.85) {
         ctx.fillText(slogan, twitterWidth/2, twitterHeight/2);
       } else {
         ctx.font = '100px Plakkaat';
-        if (ctx.measureText(slogan).width < twitterWidth*0.8) {
+        if (ctx.measureText(slogan).width < twitterWidth*0.85) {
           ctx.fillText(slogan, twitterWidth/2, twitterHeight/2);
         } else {
           var words = slogan.split(" ");
           let slogan1 = words.shift();
-          while(ctx.measureText(slogan1).width < ctx.measureText(slogan).width/2 && words.length > 1 && ctx.measureText(slogan1 + " " + words[0]).width < twitterWidth*0.8) {
+          while(ctx.measureText(slogan1).width < ctx.measureText(slogan).width/2 && words.length > 1 && ctx.measureText(slogan1 + " " + words[0]).width < twitterWidth*0.85) {
             slogan1 += " " + words.shift();
           }
           let slogan2 = words.join(" ");
-          if(ctx.measureText(slogan2).width < twitterWidth*0.8) {
+          if(ctx.measureText(slogan2).width < twitterWidth*0.85) {
             ctx.fillText(slogan1, twitterWidth/2, twitterHeight/2-100/2*lineHeight);
             ctx.fillText(slogan2, twitterWidth/2, twitterHeight/2+100/2*lineHeight);
           } else {
             ctx.font = '80px Plakkaat';
             var words = slogan.split(" ");
             let slogan1 = words.shift();
-            while(ctx.measureText(slogan1).width < ctx.measureText(slogan).width/2 && words.length > 1 && ctx.measureText(slogan1 + " " + words[0]).width < twitterWidth*0.8) {
+            while(ctx.measureText(slogan1).width < ctx.measureText(slogan).width/2 && words.length > 1 && ctx.measureText(slogan1 + " " + words[0]).width < twitterWidth*0.85) {
               slogan1 += " " + words.shift();
             }
             let slogan2 = words.join(" ");
-            if(ctx.measureText(slogan2).width < twitterWidth*0.8) {
+            if(ctx.measureText(slogan2).width < twitterWidth*0.85) {
               ctx.fillText(slogan1, twitterWidth/2, twitterHeight/2-80/2*lineHeight);
               ctx.fillText(slogan2, twitterWidth/2, twitterHeight/2+80/2*lineHeight);
             }
