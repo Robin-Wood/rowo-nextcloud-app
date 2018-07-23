@@ -4,6 +4,8 @@ const twitterHeight = 512;
 
 const logoRatio = 6.17283950617284;
 
+const lineHeight = 1.1;
+
 var input = document.getElementById('file'),
     theImg,
     imageResult,
@@ -95,10 +97,12 @@ function renderImageTwitter(ctx){
           }
           let slogan2 = words.join(" ");
           if(ctx.measureText(slogan2).width < twitterWidth*0.8) {
-            ctx.fillText(slogan1, twitterWidth/2, twitterHeight/2-55);
-            ctx.fillText(slogan2, twitterWidth/2, twitterHeight/2+55);
+            ctx.fillText(slogan1, twitterWidth/2, twitterHeight/2-100/2*lineHeight);
+            ctx.fillText(slogan2, twitterWidth/2, twitterHeight/2+100/2*lineHeight);
           } else {
-
+            ctx.font = '80px Plakkaat';
+            ctx.fillText(slogan1, twitterWidth/2, twitterHeight/2-80/2*lineHeight);
+            ctx.fillText(slogan2, twitterWidth/2, twitterHeight/2+80/2*lineHeight);
           }
         }
       }
