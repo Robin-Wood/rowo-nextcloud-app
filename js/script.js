@@ -38,6 +38,7 @@ function loadImage(src){
     imageResult = e.target.result;
     renderImageVanilla();
     renderImageTwitter();
+    renderImageTwitterZ();
   };
   reader.readAsDataURL(src);
 
@@ -94,7 +95,7 @@ function renderTwitterText() {
   }
 }
 
-function renderImageTwitter(){
+function renderImageTwitterZ(){
   var image = new Image();
 
   image.onload = function() {
