@@ -140,13 +140,13 @@ document.getElementById("downloadItTwitter").onclick = function() {
 var sloganInput = document.getElementById('slogan');
 sloganInput.addEventListener('keyup', function() {
   slogan = this.value;
-  renderImageTwitter();
+  renderImageTwitter(ctxTwitter);
 });
 
 var quelleInput = document.getElementById('quelle');
 quelleInput.addEventListener('keyup', function() {
   quelle = this.value;
-  renderImageTwitter();
+  renderImageTwitter(ctxTwitter);
 });
 
 // Set up filepicker button
