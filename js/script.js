@@ -101,8 +101,16 @@ function renderImageTwitter(ctx){
             ctx.fillText(slogan2, twitterWidth/2, twitterHeight/2+100/2*lineHeight);
           } else {
             ctx.font = '80px Plakkaat';
-            ctx.fillText(slogan1, twitterWidth/2, twitterHeight/2-80/2*lineHeight);
-            ctx.fillText(slogan2, twitterWidth/2, twitterHeight/2+80/2*lineHeight);
+            var words = slogan.split(" ");
+            let slogan1 = words.shift();
+            while(ctx.measureText(slogan1).width < ctx.measureText(slogan).width/2 && words.length > 1 && ctx.measureText(slogan1 + " " + words[0]).width < twitterWidth*0.8) {
+              slogan1 += " " + words.shift();
+            }
+            let slogan2 = words.join(" ");
+            if(ctx.measureText(slogan2).width < twitterWidth*0.8) {
+              ctx.fillText(slogan1, twitterWidth/2, twitterHeight/2-100/2*lineHeight);
+              ctx.fillText(slogan2, twitterWidth/2, twitterHeight/2+100/2*lineHeight);
+            }
           }
         }
       }
