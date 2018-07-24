@@ -199,7 +199,7 @@ function download(canvas) {
   return function() {
     canvas.toBlob(function(blob) {
       saveAs(blob, "image.jpg");
-    }, "image/jpeg", 0.96);
+    }, "image/png", 0.96);
   };
 }
 document.getElementById("downloadItVanilla").onclick = download(canvasVanilla);
