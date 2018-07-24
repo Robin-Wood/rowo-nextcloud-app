@@ -178,6 +178,7 @@ function renderImageTwitterZ(ctx){
       ctx.fillText(zitatfunktion, twitterWidth*spalte, twitterHeight*0.57+21*1.2);
     }
     if(zitat.length > 0) {
+      ctx.font = 'bold 29px MarkOT';
       var lines = cutIntoLines(ctx, zitat, twitterWidth*0.43);
       for (var i = (lines.length)-1; i >= 0; i--) {
         ctx.fillText(lines[i], twitterWidth*spalte, twitterHeight*(0.45-(lines.length-1-i)*0.08));
@@ -242,7 +243,7 @@ function cutIntoLines(ctx, text, width) {
   var lines = [];
   for(var i = 0; words.length > 0; i++) {
     lines[i] = words.shift();
-    while(ctx.measureText(lines[i] + " " + words[0]).width < width && words.length > 1) {
+    while(ctx.measureText(lines[i] + " " + words[0]).width < width && words.length > 0) {
       lines[i] += " " + words.shift();
     }
   }
