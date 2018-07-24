@@ -166,6 +166,7 @@ function renderImageTwitterZ(ctx){
     if(zitatgeberin.length > 0) {
       ctx.textBaseline = 'middle';
       ctx.fillStyle = "white";
+      ctx.globalAlpha=1;
       ctx.textAlign = "left";
       ctx.font = 'bold 21px MarkOT';
       ctx.fillText(zitatgeberin, twitterWidth*spalte, twitterHeight*0.57);
@@ -173,6 +174,7 @@ function renderImageTwitterZ(ctx){
     if(zitatfunktion.length > 0) {
       ctx.textBaseline = 'middle';
       ctx.fillStyle = "white";
+      ctx.globalAlpha=1;
       ctx.textAlign = "left";
       ctx.font = 'bold 21px MarkOT';
       ctx.fillText(zitatfunktion, twitterWidth*spalte, twitterHeight*0.57+21*1.2);
@@ -180,8 +182,9 @@ function renderImageTwitterZ(ctx){
     if(zitat.length > 0) {
       ctx.textBaseline = 'middle';
       ctx.fillStyle = "white";
+      ctx.globalAlpha=1;
       ctx.textAlign = "left";
-      ctx.font = 'bold 29px MarkOT';
+      ctx.font = '900 29px MarkOT';
       var lines = cutIntoLines(ctx, zitat, twitterWidth*0.43);
       for (var i = (lines.length)-1; i >= 0; i--) {
         ctx.fillText(lines[i], twitterWidth*spalte, twitterHeight*(0.45-(lines.length-1-i)*0.08));
@@ -196,7 +199,7 @@ function download(canvas) {
   return function() {
     canvas.toBlob(function(blob) {
       saveAs(blob, "image.jpg");
-    }, "image/jpeg", 0.95);
+    }, "image/jpeg", 0.96);
   };
 }
 document.getElementById("downloadItVanilla").onclick = download(canvasVanilla);
