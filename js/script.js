@@ -35,6 +35,7 @@ var slogan = "";
 var quelle = "";
 var zitatgeberin = "";
 var zitatfunktion = "";
+var zitat = "";
 
 // Pass image to render function
 function loadImage(src){
@@ -140,6 +141,7 @@ function renderImageTwitter(ctx){
 }
 
 function renderImageTwitterZ(ctx){
+  var spalte = 0.54;
   var image = new Image();
 
   image.onload = function() {
@@ -149,7 +151,7 @@ function renderImageTwitterZ(ctx){
     ctx.fillRect(0,0,canvasTwitterZ.width,canvasTwitterZ.height);
     drawImageProp(ctx, image, 0, 0, twitterWidth*0.51, twitterHeight);
 
-    ctx.drawImage(logo,twitterWidth*0.53,twitterHeight*0.84,360,360/logoRatio);
+    ctx.drawImage(logo,twitterWidth*spalte,twitterHeight*0.84,360,360/logoRatio);
 
     if(quelle.length > 0) {
       ctx.fillStyle = "black";
@@ -166,14 +168,20 @@ function renderImageTwitterZ(ctx){
       ctx.fillStyle = "white";
       ctx.textAlign = "left";
       ctx.font = 'bold 21px MarkOT';
-      ctx.fillText(zitatgeberin, twitterWidth*0.53, twitterHeight*0.57);
+      ctx.fillText(zitatgeberin, twitterWidth*spalte, twitterHeight*0.57);
     }
     if(zitatfunktion.length > 0) {
       ctx.textBaseline = 'middle';
       ctx.fillStyle = "white";
       ctx.textAlign = "left";
       ctx.font = 'bold 21px MarkOT';
-      ctx.fillText(zitatfunktion, twitterWidth*0.53, twitterHeight*0.57+21*1.2);
+      ctx.fillText(zitatfunktion, twitterWidth*spalte, twitterHeight*0.57+21*1.2);
+    }
+    if(zitat.length > 0) {
+      var lines = cutIntoLines(ctx, zitat, twitter.width*0.43)
+      for (var i = (lines.length)-1; i >= 0; i--) {
+        ctx.fillText(lines[i], twitterWidth*spalte, twitterHeight*(0.45-(lines.length-1-i)*0.08));
+      }
     }
   };
   image.src = imageResult;
@@ -215,6 +223,11 @@ zitatfunktionInput.addEventListener('keyup', function() {
   zitatfunktion = this.value;
   renderImageTwitterZ(ctxTwitterZ);
 });
+var zitatInput = document.getElementById('zitat');
+zitatInput.addEventListener('keyup', function() {
+  zitat = this.value;
+  renderImageTwitterZ(ctxTwitterZ);
+});
 
 // Set up filepicker button
 input.addEventListener("change", function(e) {
@@ -223,6 +236,18 @@ input.addEventListener("change", function(e) {
   loadImage(theImg);
 }, true);
 
+
+function cutIntoLines(ctx, text, width) {
+  var words = slogan.split(" ");
+  var lines = [];
+  for(var i = 0; words.length > 0; i++) {
+    lines[i] = words.shift();
+    while(ctx.measureText(lines[i] + " " + words[0]).width < width && words.length > 1) {
+      lines[i] += " " + words.shift();
+    }
+  }
+  return lines;
+}
 
 function drawImageProp(ctx, img, x, y, w, h, offsetX, offsetY) {
 

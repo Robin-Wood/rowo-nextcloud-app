@@ -22,10 +22,10 @@ style('robinwoodapp', 'style');
 				<input type="text" id="slogan" />
 			</label>
 			<strong>Zitatbox</strong>
-			<!--<label>
+			<label>
 				<span>Zitat</span>
 				<input type="text" id="zitat" />
-			</label>-->
+			</label>
 			<label>
 				<span>Zitatgeber*in</span>
 				<input type="text" id="zitatgeberin" />
