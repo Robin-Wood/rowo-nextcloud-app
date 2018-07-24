@@ -179,7 +179,6 @@ function renderImageTwitterZ(ctx){
     }
     if(zitat.length > 0) {
       var lines = cutIntoLines(ctx, zitat, twitterWidth*0.43);
-      console.log(lines);
       for (var i = (lines.length)-1; i >= 0; i--) {
         ctx.fillText(lines[i], twitterWidth*spalte, twitterHeight*(0.45-(lines.length-1-i)*0.08));
       }
@@ -240,6 +239,7 @@ input.addEventListener("change", function(e) {
 
 function cutIntoLines(ctx, text, width) {
   var words = slogan.split(" ");
+  console.log(words);
   var lines = [];
   for(var i = 0; words.length > 0; i++) {
     lines[i] = words.shift();
