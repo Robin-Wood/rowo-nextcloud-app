@@ -238,8 +238,7 @@ input.addEventListener("change", function(e) {
 
 
 function cutIntoLines(ctx, text, width) {
-  var words = slogan.split(" ");
-  console.log(words);
+  var words = text.split(" ");
   var lines = [];
   for(var i = 0; words.length > 0; i++) {
     lines[i] = words.shift();
