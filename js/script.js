@@ -178,7 +178,8 @@ function renderImageTwitterZ(ctx){
       ctx.fillText(zitatfunktion, twitterWidth*spalte, twitterHeight*0.57+21*1.2);
     }
     if(zitat.length > 0) {
-      var lines = cutIntoLines(ctx, zitat, twitterWidth*0.43)
+      var lines = cutIntoLines(ctx, zitat, twitterWidth*0.43);
+      consolo.log(lines);
       for (var i = (lines.length)-1; i >= 0; i--) {
         ctx.fillText(lines[i], twitterWidth*spalte, twitterHeight*(0.45-(lines.length-1-i)*0.08));
       }
