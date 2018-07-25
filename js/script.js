@@ -171,14 +171,14 @@ function renderImageTwitterZ(ctx, greyscale){
       ctx.clearRect(0,0, canvasTwitterZ.width, canvasTwitterZ.height);
       ctx.fillStyle = blendColor;
       ctx.fillRect(0,0,canvasTwitterZ.width,canvasTwitterZ.height);
-      drawImageProp(ctx, image, 0, 0, twitterWidth*0.51, twitterHeight);
+
 
       if(greyscale) {
         ctx.filter = 'grayscale(100%)';
       } else  {
         ctx.filter = 'none';
       }
-
+      drawImageProp(ctx, image, 0, 0, twitterWidth*0.51, twitterHeight);
       ctx.drawImage(logo,twitterWidth*spalte,twitterHeight*0.84,360,360/logoRatio);
 
       if(quelle.length > 0) {
