@@ -31,6 +31,11 @@ canvasTwitterZ.width = twitterWidth;
 canvasTwitterZ.height = twitterHeight;
 var ctxTwitterZ = canvasTwitterZ.getContext('2d');
 
+var canvasTwitterZG = document.getElementById('twitterZitatGImage');
+canvasTwitterZG.width = twitterWidth;
+canvasTwitterZG.height = twitterHeight;
+var ctxTwitterZG = canvasTwitterZG.getContext('2d');
+
 var slogan = "";
 var quelle = "";
 var zitatgeberin = "";
@@ -150,7 +155,7 @@ function renderImageTwitter(ctx){
   }
 }
 
-function renderImageTwitterZ(ctx){
+function renderImageTwitterZ(ctx, greyscale){
   if(imageResult.length > 0 && ( zitatgeberin.length > 0 || zitat.length > 0 || zitatfunktion.length > 0 ) ) {
     document.getElementById("flexTwitterZitat").style.display = 'block';
 
@@ -221,6 +226,7 @@ function download(canvas) {
 document.getElementById("downloadItVanilla").onclick = download(canvasVanilla);
 document.getElementById("downloadItTwitter").onclick = download(canvasTwitter);
 document.getElementById("downloadItTwitterZitat").onclick = download(canvasTwitterZ);
+document.getElementById("downloadItTwitterZitatG").onclick = download(canvasTwitterZG);
 
 
 var sloganInput = document.getElementById('slogan');
@@ -233,23 +239,27 @@ var quelleInput = document.getElementById('quelle');
 quelleInput.addEventListener('keyup', function() {
   quelle = this.value;
   renderImageTwitter(ctxTwitter);
-  renderImageTwitterZ(ctxTwitterZ);
+  renderImageTwitterZ(ctxTwitterZ, false);
+  renderImageTwitterZ(ctxTwitterZG, true);
 });
 
 var zitatgeberinInput = document.getElementById('zitatgeberin');
 zitatgeberinInput.addEventListener('keyup', function() {
   zitatgeberin = this.value;
-  renderImageTwitterZ(ctxTwitterZ);
+  renderImageTwitterZ(ctxTwitterZ, false);
+  renderImageTwitterZ(ctxTwitterZG, true);
 });
 var zitatfunktionInput = document.getElementById('zitatfunktion');
 zitatfunktionInput.addEventListener('keyup', function() {
   zitatfunktion = this.value;
-  renderImageTwitterZ(ctxTwitterZ);
+  renderImageTwitterZ(ctxTwitterZ, false);
+  renderImageTwitterZ(ctxTwitterZG, true);
 });
 var zitatInput = document.getElementById('zitat');
 zitatInput.addEventListener('keyup', function() {
   zitat = this.value;
-  renderImageTwitterZ(ctxTwitterZ);
+  renderImageTwitterZ(ctxTwitterZ, false);
+  renderImageTwitterZ(ctxTwitterZG, true);
 });
 
 // Set up filepicker button
