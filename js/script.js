@@ -157,7 +157,11 @@ function renderImageTwitter(ctx){
 
 function renderImageTwitterZ(ctx, greyscale){
   if(imageResult.length > 0 && ( zitatgeberin.length > 0 || zitat.length > 0 || zitatfunktion.length > 0 ) ) {
-    document.getElementById("flexTwitterZitat").style.display = 'block';
+    if(greyscale) {
+      document.getElementById("flexTwitterZitatG").style.display = 'block';
+    } else {
+      document.getElementById("flexTwitterZitat").style.display = 'block';
+    }
 
     var spalte = 0.54;
     var image = new Image();
@@ -168,6 +172,12 @@ function renderImageTwitterZ(ctx, greyscale){
       ctx.fillStyle = blendColor;
       ctx.fillRect(0,0,canvasTwitterZ.width,canvasTwitterZ.height);
       drawImageProp(ctx, image, 0, 0, twitterWidth*0.51, twitterHeight);
+
+      if(greyscale) {
+        ctx.filter = 'grayscale(100%)';
+      } else  {
+        ctx.filter = 'none';
+      }
 
       ctx.drawImage(logo,twitterWidth*spalte,twitterHeight*0.84,360,360/logoRatio);
 
@@ -212,6 +222,7 @@ function renderImageTwitterZ(ctx, greyscale){
     image.src = imageResult;
   } else {
     document.getElementById("flexTwitterZitat").style.display = 'none';
+    document.getElementById("flexTwitterZitatG").style.display = 'none';
   }
 }
 
