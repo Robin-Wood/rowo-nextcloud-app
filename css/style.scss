@@ -41,6 +41,7 @@ span.fontpreload {
     .flexBox {
       display: none;
       flex-basis: auto;
+      flex-grow: 1;
       margin: 10px;
       width: 500px;
 

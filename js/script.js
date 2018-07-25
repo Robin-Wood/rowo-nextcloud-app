@@ -51,62 +51,54 @@ function loadImage(src){
 }
 
 function renderImageVanilla(ctx) {
-  document.getElementById("flexVanilla").style.display = 'block';
-  var image = new Image();
+  if(imageResult.length > 0) {
+    document.getElementById("flexVanilla").style.display = 'block';
+    var image = new Image();
 
-  image.onload = function() {
-    canvasVanilla.width = image.width;
-    canvasVanilla.height = image.height;
-    ctx.filter = 'none';
-    ctx.clearRect(0,0, canvasVanilla.width, canvasVanilla.height);
-    ctx.fillStyle = blendColor;
-    ctx.fillRect(0,0,canvasVanilla.width,canvasVanilla.height);
-    ctx.filter = currentFilter + ' contrast(1.2)';
-    ctx.globalCompositeOperation = currentBlend;
-    ctx.drawImage(image, 0, 0, image.width, image.height);
-  };
-  image.src = imageResult;
+    image.onload = function() {
+      canvasVanilla.width = image.width;
+      canvasVanilla.height = image.height;
+      ctx.filter = 'none';
+      ctx.clearRect(0,0, canvasVanilla.width, canvasVanilla.height);
+      ctx.fillStyle = blendColor;
+      ctx.fillRect(0,0,canvasVanilla.width,canvasVanilla.height);
+      ctx.filter = currentFilter + ' contrast(1.2)';
+      ctx.globalCompositeOperation = currentBlend;
+      ctx.drawImage(image, 0, 0, image.width, image.height);
+    };
+    image.src = imageResult;
+  }
 }
 
 function renderImageTwitter(ctx){
-  document.getElementById("flexTwitter").style.display = 'block';
-  var twitterImage = new Image();
+  if(imageResult.length > 0 && slogan.length > 0) {
+    document.getElementById("flexTwitter").style.display = 'block';
+    var twitterImage = new Image();
 
-  twitterImage.onload = function() {
-    ctx.filter = 'none';
-    ctx.clearRect(0,0, canvasTwitter.width, canvasTwitter.height);
-    ctx.fillStyle = blendColor;
-    ctx.fillRect(0,0,canvasTwitter.width,canvasTwitter.height);
-    ctx.filter = currentFilter + ' contrast(1.6)';
-    ctx.globalCompositeOperation = currentBlend;
-    drawImageProp(ctx, twitterImage, 0, 0, twitterWidth, twitterHeight);
+    twitterImage.onload = function() {
+      ctx.filter = 'none';
+      ctx.clearRect(0,0, canvasTwitter.width, canvasTwitter.height);
+      ctx.fillStyle = blendColor;
+      ctx.fillRect(0,0,canvasTwitter.width,canvasTwitter.height);
+      ctx.filter = currentFilter + ' contrast(1.6)';
+      ctx.globalCompositeOperation = currentBlend;
+      drawImageProp(ctx, twitterImage, 0, 0, twitterWidth, twitterHeight);
 
-    ctx.globalCompositeOperation = 'source-over';
-    ctx.fillStyle = 'white';
-    ctx.textBaseline = 'middle';
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.fillStyle = 'white';
+      ctx.textBaseline = 'middle';
 
-    ctx.drawImage(logo,330,414,360,360/logoRatio);
-    if(slogan.length > 0) {
-      ctx.textAlign = "center";
-      ctx.font = '130px Plakkaat';
-      if (ctx.measureText(slogan).width < twitterWidth*margin) {
-        ctx.fillText(slogan, twitterWidth/2, twitterHeight/2);
-      } else {
-        ctx.font = '100px Plakkaat';
+      ctx.drawImage(logo,330,414,360,360/logoRatio);
+      if(slogan.length > 0) {
+        ctx.textAlign = "center";
+        ctx.font = '130px Plakkaat';
         if (ctx.measureText(slogan).width < twitterWidth*margin) {
           ctx.fillText(slogan, twitterWidth/2, twitterHeight/2);
         } else {
-          var words = slogan.split(" ");
-          let slogan1 = words.shift();
-          while(ctx.measureText(slogan1).width < ctx.measureText(slogan).width/2 && words.length > 1 && ctx.measureText(slogan1 + " " + words[0]).width < twitterWidth*margin) {
-            slogan1 += " " + words.shift();
-          }
-          let slogan2 = words.join(" ");
-          if(ctx.measureText(slogan2).width < twitterWidth*margin) {
-            ctx.fillText(slogan1, twitterWidth/2, twitterHeight/2-100/2*lineHeight);
-            ctx.fillText(slogan2, twitterWidth/2, twitterHeight/2+100/2*lineHeight);
+          ctx.font = '100px Plakkaat';
+          if (ctx.measureText(slogan).width < twitterWidth*margin) {
+            ctx.fillText(slogan, twitterWidth/2, twitterHeight/2);
           } else {
-            ctx.font = '80px Plakkaat';
             var words = slogan.split(" ");
             let slogan1 = words.shift();
             while(ctx.measureText(slogan1).width < ctx.measureText(slogan).width/2 && words.length > 1 && ctx.measureText(slogan1 + " " + words[0]).width < twitterWidth*margin) {
@@ -114,88 +106,102 @@ function renderImageTwitter(ctx){
             }
             let slogan2 = words.join(" ");
             if(ctx.measureText(slogan2).width < twitterWidth*margin) {
-              ctx.fillText(slogan1, twitterWidth/2, twitterHeight/2-80/2*lineHeight);
-              ctx.fillText(slogan2, twitterWidth/2, twitterHeight/2+80/2*lineHeight);
+              ctx.fillText(slogan1, twitterWidth/2, twitterHeight/2-100/2*lineHeight);
+              ctx.fillText(slogan2, twitterWidth/2, twitterHeight/2+100/2*lineHeight);
             } else {
-              var words = slogan2.split(" ");
-              let slogan21 = words.shift();
-              while(ctx.measureText(slogan21).width < ctx.measureText(slogan2).width/2 && words.length > 1 && ctx.measureText(slogan21 + " " + words[0]).width < twitterWidth*margin) {
-                slogan21 += " " + words.shift();
+              ctx.font = '80px Plakkaat';
+              var words = slogan.split(" ");
+              let slogan1 = words.shift();
+              while(ctx.measureText(slogan1).width < ctx.measureText(slogan).width/2 && words.length > 1 && ctx.measureText(slogan1 + " " + words[0]).width < twitterWidth*margin) {
+                slogan1 += " " + words.shift();
               }
-              let slogan22 = words.join(" ");
-              if(ctx.measureText(slogan22).width < twitterWidth*margin) {
-                ctx.fillText(slogan1, twitterWidth/2, twitterHeight/2-15-80*lineHeight);
-                ctx.fillText(slogan21, twitterWidth/2, twitterHeight/2-15);
-                ctx.fillText(slogan22, twitterWidth/2, twitterHeight/2-15+80*lineHeight);
+              let slogan2 = words.join(" ");
+              if(ctx.measureText(slogan2).width < twitterWidth*margin) {
+                ctx.fillText(slogan1, twitterWidth/2, twitterHeight/2-80/2*lineHeight);
+                ctx.fillText(slogan2, twitterWidth/2, twitterHeight/2+80/2*lineHeight);
+              } else {
+                var words = slogan2.split(" ");
+                let slogan21 = words.shift();
+                while(ctx.measureText(slogan21).width < ctx.measureText(slogan2).width/2 && words.length > 1 && ctx.measureText(slogan21 + " " + words[0]).width < twitterWidth*margin) {
+                  slogan21 += " " + words.shift();
+                }
+                let slogan22 = words.join(" ");
+                if(ctx.measureText(slogan22).width < twitterWidth*margin) {
+                  ctx.fillText(slogan1, twitterWidth/2, twitterHeight/2-15-80*lineHeight);
+                  ctx.fillText(slogan21, twitterWidth/2, twitterHeight/2-15);
+                  ctx.fillText(slogan22, twitterWidth/2, twitterHeight/2-15+80*lineHeight);
+                }
               }
             }
           }
         }
       }
-    }
-    if(quelle.length > 0) {
-      ctx.textAlign = "left";
-      ctx.font = '18px MarkOT';
-      ctx.fillText('Foto: ' + quelle, 32, 489);
-    }
-  };
-  twitterImage.src = imageResult;
+      if(quelle.length > 0) {
+        ctx.textAlign = "left";
+        ctx.font = '18px MarkOT';
+        ctx.fillText('Foto: ' + quelle, 32, 489);
+      }
+    };
+    twitterImage.src = imageResult;
+  }
 }
 
 function renderImageTwitterZ(ctx){
-  document.getElementById("flexTwitterZitat").style.display = 'block';
+  if(imageResult.length > 0 && ( zitatgeberin.length > 0 || zitat.length > 0 || zitatfunktion.length > 0 ) ) {
+    document.getElementById("flexTwitterZitat").style.display = 'block';
 
-  var spalte = 0.54;
-  var image = new Image();
+    var spalte = 0.54;
+    var image = new Image();
 
-  image.onload = function() {
-    ctx.filter = 'none';
-    ctx.clearRect(0,0, canvasTwitterZ.width, canvasTwitterZ.height);
-    ctx.fillStyle = blendColor;
-    ctx.fillRect(0,0,canvasTwitterZ.width,canvasTwitterZ.height);
-    drawImageProp(ctx, image, 0, 0, twitterWidth*0.51, twitterHeight);
+    image.onload = function() {
+      ctx.filter = 'none';
+      ctx.clearRect(0,0, canvasTwitterZ.width, canvasTwitterZ.height);
+      ctx.fillStyle = blendColor;
+      ctx.fillRect(0,0,canvasTwitterZ.width,canvasTwitterZ.height);
+      drawImageProp(ctx, image, 0, 0, twitterWidth*0.51, twitterHeight);
 
-    ctx.drawImage(logo,twitterWidth*spalte,twitterHeight*0.84,360,360/logoRatio);
+      ctx.drawImage(logo,twitterWidth*spalte,twitterHeight*0.84,360,360/logoRatio);
 
-    if(quelle.length > 0) {
-      ctx.fillStyle = "black";
-      ctx.globalAlpha=0.35;
-      ctx.fillRect(0, twitterHeight-54, twitterWidth*0.51, 54);
-      ctx.fillStyle = "white";
-      ctx.globalAlpha=1;
-      ctx.textAlign = "left";
-      ctx.font = '18px MarkOT';
-      ctx.fillText('Foto: ' + quelle, 32, 489);
-    }
-    if(zitatgeberin.length > 0) {
-      ctx.textBaseline = 'middle';
-      ctx.fillStyle = "white";
-      ctx.globalAlpha=1;
-      ctx.textAlign = "left";
-      ctx.font = 'bold 21px MarkOT';
-      ctx.fillText(zitatgeberin, twitterWidth*spalte, twitterHeight*0.57);
-    }
-    if(zitatfunktion.length > 0) {
-      ctx.textBaseline = 'middle';
-      ctx.fillStyle = "white";
-      ctx.globalAlpha=1;
-      ctx.textAlign = "left";
-      ctx.font = 'bold 21px MarkOT';
-      ctx.fillText(zitatfunktion, twitterWidth*spalte, twitterHeight*0.57+21*1.2);
-    }
-    if(zitat.length > 0) {
-      ctx.textBaseline = 'middle';
-      ctx.fillStyle = "white";
-      ctx.globalAlpha=1;
-      ctx.textAlign = "left";
-      ctx.font = '900 29px MarkOT';
-      var lines = cutIntoLines(ctx, zitat, twitterWidth*0.43);
-      for (var i = (lines.length)-1; i >= 0; i--) {
-        ctx.fillText(lines[i], twitterWidth*spalte, twitterHeight*(0.45-(lines.length-1-i)*0.08));
+      if(quelle.length > 0) {
+        ctx.fillStyle = "black";
+        ctx.globalAlpha=0.35;
+        ctx.fillRect(0, twitterHeight-54, twitterWidth*0.51, 54);
+        ctx.fillStyle = "white";
+        ctx.globalAlpha=1;
+        ctx.textAlign = "left";
+        ctx.font = '18px MarkOT';
+        ctx.fillText('Foto: ' + quelle, 32, 489);
       }
-    }
-  };
-  image.src = imageResult;
+      if(zitatgeberin.length > 0) {
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = "white";
+        ctx.globalAlpha=1;
+        ctx.textAlign = "left";
+        ctx.font = 'bold 21px MarkOT';
+        ctx.fillText(zitatgeberin, twitterWidth*spalte, twitterHeight*0.57);
+      }
+      if(zitatfunktion.length > 0) {
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = "white";
+        ctx.globalAlpha=1;
+        ctx.textAlign = "left";
+        ctx.font = 'bold 21px MarkOT';
+        ctx.fillText(zitatfunktion, twitterWidth*spalte, twitterHeight*0.57+21*1.2);
+      }
+      if(zitat.length > 0) {
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = "white";
+        ctx.globalAlpha=1;
+        ctx.textAlign = "left";
+        ctx.font = '900 29px MarkOT';
+        var lines = cutIntoLines(ctx, zitat, twitterWidth*0.43);
+        for (var i = (lines.length)-1; i >= 0; i--) {
+          ctx.fillText(lines[i], twitterWidth*spalte, twitterHeight*(0.45-(lines.length-1-i)*0.08));
+        }
+      }
+    };
+    image.src = imageResult;
+  }
 }
 
 // Download contents on canvas using filesaver.js
