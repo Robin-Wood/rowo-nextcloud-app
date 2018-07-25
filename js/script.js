@@ -67,6 +67,8 @@ function renderImageVanilla(ctx) {
       ctx.drawImage(image, 0, 0, image.width, image.height);
     };
     image.src = imageResult;
+  } else {
+    document.getElementById("flexVanilla").style.display = 'none';
   }
 }
 
@@ -143,6 +145,8 @@ function renderImageTwitter(ctx){
       }
     };
     twitterImage.src = imageResult;
+  } else {
+    document.getElementById("flexTwitter").style.display = 'none';
   }
 }
 
@@ -201,6 +205,8 @@ function renderImageTwitterZ(ctx){
       }
     };
     image.src = imageResult;
+  } else {
+    document.getElementById("flexTwitterZitat").style.display = 'none';
   }
 }
 
