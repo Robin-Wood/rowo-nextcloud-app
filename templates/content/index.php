@@ -1,6 +1,6 @@
 <div class="section screen">
 
-  <div class="flexBox">
+  <div id="flexVanilla" class="flexBox">
     <div class="imageBox">
       <div class="card-up">
         <canvas id="vanillaImage" class="finalImage"></canvas>
@@ -12,7 +12,7 @@
     </div>
   </div>
 
-  <div class="flexBox">
+  <div id="flexTwitter" class="flexBox">
     <div class="imageBox">
       <div class="card-up">
         <canvas id="twitterImage" class="finalImage"></canvas>
@@ -24,7 +24,7 @@
     </div>
   </div>
 
-  <div class="flexBox">
+  <div id="flexTwitterZitat" class="flexBox">
     <div class="imageBox">
       <div class="card-up">
         <canvas id="twitterZitatImage" class="finalImage"></canvas>

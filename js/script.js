@@ -51,6 +51,7 @@ function loadImage(src){
 }
 
 function renderImageVanilla(ctx) {
+  document.getElementById("flexVanilla").style.display = 'block';
   var image = new Image();
 
   image.onload = function() {
@@ -68,6 +69,7 @@ function renderImageVanilla(ctx) {
 }
 
 function renderImageTwitter(ctx){
+  document.getElementById("flexTwitter").style.display = 'block';
   var twitterImage = new Image();
 
   twitterImage.onload = function() {
@@ -141,6 +143,8 @@ function renderImageTwitter(ctx){
 }
 
 function renderImageTwitterZ(ctx){
+  document.getElementById("flexTwitterZitat").style.display = 'block';
+
   var spalte = 0.54;
   var image = new Image();
 
@@ -198,7 +202,7 @@ function renderImageTwitterZ(ctx){
 function download(canvas) {
   return function() {
     canvas.toBlob(function(blob) {
-      saveAs(blob, "image.jpg");
+      saveAs(blob, "image.png");
     }, "image/png", 0.96);
   };
 }

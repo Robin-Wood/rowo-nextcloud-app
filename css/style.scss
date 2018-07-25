@@ -35,9 +35,11 @@ span.fontpreload {
 
   .section {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
 
     .flexBox {
+      display: none;
       flex-basis: auto;
       margin: 10px;
       width: 500px;
