@@ -93,11 +93,11 @@ function renderImageInsta(ctx){
     image.onload = function() {
       ctx.filter = 'none';
       drawImageProp(ctx, image, 0, 0, instaWidth, instaHeight);
-      ctx.fillStyle = "black";
+      ctx.fillStyle = blendColor;
       ctx.globalAlpha=0.35;
-      ctx.fillRect(0, instaHeight-instaWidth*0.3/logoRatio*1.6, instaWidth, instaWidth*0.3/logoRatio*1.6);
+      ctx.fillRect(0, instaHeight-instaWidth*0.3/logoRatio*2, instaWidth, instaWidth*0.3/logoRatio*2);
       ctx.globalAlpha=1;
-      ctx.drawImage(logo,instaWidth*0.35,instaHeight - instaWidth*0.3/logoRatio*1.3,instaWidth*0.3,instaWidth*0.3/logoRatio);
+      ctx.drawImage(logo,instaWidth*0.35,instaHeight - instaWidth*0.3/logoRatio*1.5,instaWidth*0.3,instaWidth*0.3/logoRatio);
     };
     image.src = imageResult;
   } else {
