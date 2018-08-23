@@ -91,7 +91,7 @@ function renderImageInsta(ctx){
     var image = new Image();
 
     image.onload = function() {
-      var barHeight = instaWidth*0.3/logoRatio*2;
+      var barHeight = (instaHeight-instaWidth)/2;
 
       ctx.filter = 'none';
       drawImageProp(ctx, image, 0, 0, instaWidth, instaHeight-barHeight);
@@ -99,7 +99,7 @@ function renderImageInsta(ctx){
       ctx.globalAlpha=1
       ctx.fillRect(0, instaHeight-barHeight, instaWidth, barHeight);
       ctx.globalAlpha=1;
-      ctx.drawImage(logo,instaWidth*0.35,instaHeight - instaWidth*0.3/logoRatio*1.5,instaWidth*0.3,instaWidth*0.3/logoRatio);
+      ctx.drawImage(logo,(instaWidth-barHeight/2*logoRatio)/2, barHeight*0.75, barHeight/2*logoRatio, barHeight/2);
     };
     image.src = imageResult;
   } else {
