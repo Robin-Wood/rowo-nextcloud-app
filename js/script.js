@@ -92,7 +92,7 @@ function renderImageInsta(ctx){
 
     image.onload = function() {
       ctx.filter = 'none';
-      ctx.drawImage(image, 0, 0, instaWidth, instaHeight);
+      drawImageProp(ctx, image, 0, 0, instaWidth, instaHeight);
     };
     image.src = imageResult;
   } else {
