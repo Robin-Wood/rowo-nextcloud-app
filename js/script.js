@@ -93,6 +93,10 @@ function renderImageInsta(ctx){
     image.onload = function() {
       ctx.filter = 'none';
       drawImageProp(ctx, image, 0, 0, instaWidth, instaHeight);
+      ctx.fillStyle = "black";
+      ctx.globalAlpha=0.35;
+      ctx.fillRect(0, instaHeight-70, instaWidth, 70);
+      ctx.drawImage(logo,instaWidth*0.35,instaHeight - instaWidth*0.3/logoRatio*1.,instaWidth*0.3,instaWidth*0.3/logoRatio);
     };
     image.src = imageResult;
   } else {
