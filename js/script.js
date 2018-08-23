@@ -92,12 +92,7 @@ function renderImageInsta(ctx){
 
     image.onload = function() {
       ctx.filter = 'none';
-      ctx.clearRect(0,0, canvasVanilla.width, canvasVanilla.height);
-      ctx.fillStyle = blendColor;
-      ctx.fillRect(0,0,canvasVanilla.width,canvasVanilla.height);
-      ctx.filter = currentFilter + ' contrast(1.2)';
-      ctx.globalCompositeOperation = currentBlend;
-      ctx.drawImage(image, 0, 0, image.width, image.height);
+      ctx.drawImage(image, 0, 0, instaWidth, instaHeight);
     };
     image.src = imageResult;
   } else {
