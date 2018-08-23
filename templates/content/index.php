@@ -48,4 +48,16 @@
     </div>
   </div>
 
+  <div id="flexInsta1" class="flexBox">
+    <div class="imageBox">
+      <div class="card-up">
+        <canvas id="insta1Image" class="finalImage"></canvas>
+      </div>
+      <div class="card-down">
+        <span>Instagram</span>
+        <button id="downloadItInsta1" class="primary">Herunterladen</button>
+      </div>
+    </div>
+  </div>
+
 </div>

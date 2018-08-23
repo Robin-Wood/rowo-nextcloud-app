@@ -1,6 +1,8 @@
 // Current optimal image sizes for Twitter
 const twitterWidth = 1024;
 const twitterHeight = 512;
+const instaWidth = 1080;
+const instaHeight = 1350;
 
 const logoRatio = 6.17283950617284;
 
@@ -35,6 +37,11 @@ var canvasTwitterZG = document.getElementById('twitterZitatGImage');
 canvasTwitterZG.width = twitterWidth;
 canvasTwitterZG.height = twitterHeight;
 var ctxTwitterZG = canvasTwitterZG.getContext('2d');
+
+var canvasInsta1 = document.getElementById('insta1Image');
+canvasInsta1.width = instaWidth;
+canvasInsta1.height = instaHeight;
+var ctxInsta1 = canvasInsta1.getContext('2d');
 
 var slogan = "";
 var quelle = "";
@@ -74,6 +81,26 @@ function renderImageVanilla(ctx) {
     image.src = imageResult;
   } else {
     document.getElementById("flexVanilla").style.display = 'none';
+  }
+}
+
+function renderImageInsta(ctx){
+  if(imageResult.length > 0) {
+    document.getElementById("flexInsta1").style.display = 'block';
+    var image = new Image();
+
+    image.onload = function() {
+      ctx.filter = 'none';
+      ctx.clearRect(0,0, canvasVanilla.width, canvasVanilla.height);
+      ctx.fillStyle = blendColor;
+      ctx.fillRect(0,0,canvasVanilla.width,canvasVanilla.height);
+      ctx.filter = currentFilter + ' contrast(1.2)';
+      ctx.globalCompositeOperation = currentBlend;
+      ctx.drawImage(image, 0, 0, image.width, image.height);
+    };
+    image.src = imageResult;
+  } else {
+    document.getElementById("flexInsta1").style.display = 'none';
   }
 }
 
