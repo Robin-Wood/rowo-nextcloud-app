@@ -57,6 +57,7 @@ function loadImage(src){
     renderImageVanilla(ctxVanilla);
     renderImageTwitter(ctxTwitter);
     renderImageTwitterZ(ctxTwitterZ);
+    renderImageInsta(ctxInsta1);
   };
   reader.readAsDataURL(src);
 
@@ -265,6 +266,7 @@ document.getElementById("downloadItVanilla").onclick = download(canvasVanilla);
 document.getElementById("downloadItTwitter").onclick = download(canvasTwitter);
 document.getElementById("downloadItTwitterZitat").onclick = download(canvasTwitterZ);
 document.getElementById("downloadItTwitterZitatG").onclick = download(canvasTwitterZG);
+document.getElementById("downloadItInsta1").onclick = download(canvasInsta1);
 
 
 var sloganInput = document.getElementById('slogan');
