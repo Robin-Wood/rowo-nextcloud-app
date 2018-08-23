@@ -94,12 +94,12 @@ function renderImageInsta(ctx){
       var barHeight = (instaHeight-instaWidth)/2;
 
       ctx.filter = 'none';
-      drawImageProp(ctx, image, 0, 0, instaWidth, instaHeight-barHeight);
+      drawImageProp(ctx, image, 0, 0, instaWidth, instaHeight);
       ctx.fillStyle = blendColor;
-      ctx.globalAlpha=1
-      ctx.fillRect(0, instaHeight-barHeight, instaWidth, barHeight);
+      //ctx.globalAlpha=1
+      //ctx.fillRect(0, instaHeight-barHeight, instaWidth, barHeight);
       ctx.globalAlpha=1;
-      ctx.drawImage(logo,(instaWidth-barHeight/2*logoRatio)/2, barHeight*0.75, barHeight/2*logoRatio, barHeight/2);
+      ctx.drawImage(logo,(instaWidth-barHeight/2*logoRatio)/2, instaHeight - barHeight*0.75, barHeight/2*logoRatio, barHeight/2);
     };
     image.src = imageResult;
   } else {
