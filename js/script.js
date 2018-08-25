@@ -111,8 +111,8 @@ function renderImageInsta(ctx){
         ctx.globalAlpha=1;
         ctx.fillStyle = 'white';
         ctx.textAlign = "left";
-        ctx.font = '18px MarkOT';
-        ctx.fillText('Foto: ' + quelle, 32, instaHeight-(32+18));
+        ctx.font = '25px MarkOT';
+        ctx.fillText('Foto: ' + quelle, 32, instaHeight-32);
       }
     };
     image.src = imageResult;
