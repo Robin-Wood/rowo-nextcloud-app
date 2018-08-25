@@ -99,8 +99,8 @@ function renderImageInsta(ctx){
       ctx.filter = 'none';
       drawImageProp(ctx, image, 0, 0, instaWidth, instaHeight);
       ctx.fillStyle = blendColor;
-      //ctx.globalAlpha=1
-      var gradient = ctx.createLinearGradient(instaHeight-barHeight, 0, instaHeight, 0)
+      ctx.globalAlpha=1;
+      var gradient = ctx.createLinearGradient(0, instaHeight-barHeight, 0, instaHeight);
       gradient.addColorStop(0, rgba(0, 0, 0, 0));
       gradient.addColorStop(1, rgba(0, 0, 0, 0.35));
       ctx.fillStyle = gradient;
