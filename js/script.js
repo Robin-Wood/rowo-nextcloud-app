@@ -109,6 +109,7 @@ function renderImageInsta(ctx){
       ctx.drawImage(logo,(instaWidth-barHeight*0.4*logoRatio)*0.5, instaHeight - barHeight*0.8, barHeight*0.4*logoRatio, barHeight*0.4);
       if(quelle.length > 0) {
         ctx.globalAlpha=1;
+        ctx.fillStyle = 'white';
         ctx.textAlign = "left";
         ctx.font = '18px MarkOT';
         ctx.fillText('Foto: ' + quelle, 32, instaHeight-(32+18));
