@@ -102,11 +102,11 @@ function renderImageInsta(ctx){
       ctx.globalAlpha=1;
       var gradient = ctx.createLinearGradient(0, instaHeight-barHeight, 0, instaHeight);
       gradient.addColorStop(0, 'rgba(0, 0, 0, 0)');
-      gradient.addColorStop(1, 'rgba(0, 0, 0, 0.5)');
+      gradient.addColorStop(1, 'rgba(0, 0, 0, 0.6)');
       ctx.fillStyle = gradient;
       ctx.fillRect(0, instaHeight-barHeight, instaWidth, barHeight);
       ctx.globalAlpha=1;
-      ctx.drawImage(logo,(instaWidth-barHeight*0.4*logoRatio)*0.4, instaHeight - barHeight*0.7, barHeight*0.4*logoRatio, barHeight*0.4);
+      ctx.drawImage(logo,(instaWidth-barHeight*0.4*logoRatio)*0.5, instaHeight - barHeight*0.7, barHeight*0.4*logoRatio, barHeight*0.4);
     };
     image.src = imageResult;
   } else {
