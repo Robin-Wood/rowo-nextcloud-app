@@ -100,7 +100,11 @@ function renderImageInsta(ctx){
       drawImageProp(ctx, image, 0, 0, instaWidth, instaHeight);
       ctx.fillStyle = blendColor;
       //ctx.globalAlpha=1
-      //ctx.fillRect(0, instaHeight-barHeight, instaWidth, barHeight);
+      var gradient = ctx.createLinearGradient(instaHeight-barHeight, 0, instaHeight, 0)
+      gradient.addColorStop(0, rgba(0, 0, 0, 0));
+      gradient.addColorStop(1, rgba(0, 0, 0, 0.35));
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, instaHeight-barHeight, instaWidth, barHeight);
       ctx.globalAlpha=1;
       ctx.drawImage(logoGreen,(instaWidth-barHeight/2*logoRatio)/2, instaHeight - barHeight*0.75, barHeight/2*logoRatio, barHeight/2);
     };
