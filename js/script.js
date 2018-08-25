@@ -296,6 +296,7 @@ quelleInput.addEventListener('keyup', function() {
   renderImageTwitter(ctxTwitter);
   renderImageTwitterZ(ctxTwitterZ, false);
   renderImageTwitterZ(ctxTwitterZG, true);
+  renderImageInsta();
 });
 
 var zitatgeberinInput = document.getElementById('zitatgeberin');
