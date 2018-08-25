@@ -106,7 +106,13 @@ function renderImageInsta(ctx){
       ctx.fillStyle = gradient;
       ctx.fillRect(0, instaHeight-barHeight, instaWidth, barHeight);
       ctx.globalAlpha=1;
-      ctx.drawImage(logo,(instaWidth-barHeight*0.4*logoRatio)*0.5, instaHeight - barHeight*0.7, barHeight*0.4*logoRatio, barHeight*0.4);
+      ctx.drawImage(logo,(instaWidth-barHeight*0.4*logoRatio)*0.5, instaHeight - barHeight*0.8, barHeight*0.4*logoRatio, barHeight*0.4);
+      if(quelle.length > 0) {
+        ctx.globalAlpha=1;
+        ctx.textAlign = "left";
+        ctx.font = '18px MarkOT';
+        ctx.fillText('Foto: ' + quelle, 32, instaWidth-(32+18));
+      }
     };
     image.src = imageResult;
   } else {
