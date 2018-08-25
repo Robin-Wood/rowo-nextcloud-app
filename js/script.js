@@ -20,6 +20,9 @@ var input = document.getElementById('file'),
 var logo = new Image();
 logo.src = 'img/logo.png';
 
+var logoGreen = new Image();
+logoGreen.src = 'img/logo_green.png';
+
 var canvasVanilla = document.getElementById('vanillaImage');
 var ctxVanilla = canvasVanilla.getContext('2d');
 
@@ -99,7 +102,7 @@ function renderImageInsta(ctx){
       //ctx.globalAlpha=1
       //ctx.fillRect(0, instaHeight-barHeight, instaWidth, barHeight);
       ctx.globalAlpha=1;
-      ctx.drawImage(logo,(instaWidth-barHeight/2*logoRatio)/2, instaHeight - barHeight*0.75, barHeight/2*logoRatio, barHeight/2);
+      ctx.drawImage(logoGreen,(instaWidth-barHeight/2*logoRatio)/2, instaHeight - barHeight*0.75, barHeight/2*logoRatio, barHeight/2);
     };
     image.src = imageResult;
   } else {
