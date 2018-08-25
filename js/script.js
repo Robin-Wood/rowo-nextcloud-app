@@ -101,7 +101,7 @@ function renderImageInsta(ctx){
       ctx.fillStyle = blendColor;
       ctx.globalAlpha=1;
       var gradient = ctx.createLinearGradient(0, instaHeight-barHeight, 0, instaHeight);
-      gradient.addColorStop(0, 'rgba(0, 0, 0, 0)');
+      gradient.addColorStop(0, 'rgba(0, 0, 0, 1)');
       gradient.addColorStop(1, 'rgba(0, 0, 0, 0.35)');
       ctx.fillStyle = gradient;
       ctx.fillRect(0, instaHeight-barHeight, instaWidth, barHeight);
