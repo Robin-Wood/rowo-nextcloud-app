@@ -106,7 +106,7 @@ function renderImageInsta(ctx){
       ctx.fillStyle = gradient;
       ctx.fillRect(0, instaHeight-barHeight, instaWidth, barHeight);
       ctx.globalAlpha=1;
-      ctx.drawImage(logoGreen,(instaWidth-barHeight/2*logoRatio)/2, instaHeight - barHeight*0.75, barHeight/2*logoRatio, barHeight/2);
+      ctx.drawImage(logo,(instaWidth-barHeight/2*logoRatio)*0.4, instaHeight - barHeight*0.7, barHeight/2*logoRatio, barHeight*0.4);
     };
     image.src = imageResult;
   } else {
