@@ -102,11 +102,11 @@ function renderImageInsta(ctx){
       ctx.globalAlpha=1;
       var gradient = ctx.createLinearGradient(0, instaHeight-barHeight*1.3, 0, instaHeight);
       gradient.addColorStop(0, 'rgba(0, 0, 0, 0)');
-      gradient.addColorStop(1, 'rgba(0, 0, 0, 0.5)');
+      gradient.addColorStop(1, 'rgba(0, 0, 0, 0.55)');
       ctx.fillStyle = gradient;
       ctx.fillRect(0, instaHeight-barHeight*1.3, instaWidth, barHeight*1.3);
       ctx.globalAlpha=1;
-      ctx.drawImage(logo,(instaWidth-barHeight*0.4*logoRatio)*0.5, instaHeight - barHeight*0.9, barHeight*0.4*logoRatio, barHeight*0.4);
+      ctx.drawImage(logo,(instaWidth-barHeight*0.45*logoRatio)*0.5, instaHeight - barHeight*0.95, barHeight*0.45*logoRatio, barHeight*0.45);
       if(quelle.length > 0) {
         ctx.globalAlpha=1;
         ctx.fillStyle = 'white';
