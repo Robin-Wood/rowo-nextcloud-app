@@ -12,10 +12,10 @@ style('robinwoodapp', 'style');
 				<span>Bild-Datei</span>
 				<input type="file" name="file" id="file" accept="image/*" capture>
 			</label>
-			<label>
+			<!-- <label>
 				<span>Ausschnitt</span>
 				<input type="range" min="0" max="1" value="0.5" step="0.01" class="slider" id="myRange">
-			</label>
+			</label> -->
 			<label>
 				<span>Bildquelle</span>
 				<input type="text" id="quelle" />
