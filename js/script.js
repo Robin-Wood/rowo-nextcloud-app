@@ -390,7 +390,7 @@ function drawImageProp(ctx, img, x, y, w, h, offsetX, offsetY) {
 }
 
 function getFlexbox(id, text) {
-  if (document.getElementById(id)) {
+  if (!(document.getElementById(id))) {
     var node = document.createElement("div");
     node.setAttribute('class', 'flexBox');
     node.setAttribute('id', id);
