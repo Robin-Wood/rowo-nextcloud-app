@@ -14,7 +14,7 @@ style('robinwoodapp', 'style');
 			</label>
 			<label>
 				<span>Ausschnitt</span>
-				<input type="range" min="0" max="1" value="0.5" class="slider" id="myRange">
+				<input type="range" min="0" max="1" value="0.5" step="0.01" class="slider" id="myRange">
 			</label>
 			<label>
 				<span>Bildquelle</span>
