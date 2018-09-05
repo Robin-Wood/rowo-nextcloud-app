@@ -119,9 +119,9 @@ function renderImageTwitter(){
       canvas.height = twitterHeight;
 
       ctx.filter = 'none';
-      ctx.clearRect(0,0, canvasTwitter.width, canvasTwitter.height);
+      ctx.clearRect(0,0, canvas.width, canvas.height);
       ctx.fillStyle = blendColor;
-      ctx.fillRect(0,0,canvasTwitter.width,canvasTwitter.height);
+      ctx.fillRect(0,0,canvas.width,canvas.height);
       ctx.filter = currentFilter + ' contrast(1.6)';
       ctx.globalCompositeOperation = currentBlend;
       drawImageProp(ctx, twitterImage, 0, 0, twitterWidth, twitterHeight);
@@ -210,9 +210,9 @@ function renderImageTwitterZ(greyscale){
       canvas.height = twitterHeight;
 
       ctx.filter = 'none';
-      ctx.clearRect(0,0, canvasTwitterZ.width, canvasTwitterZ.height);
+      ctx.clearRect(0,0, canvasZ.width, canvasZ.height);
       ctx.fillStyle = blendColor;
-      ctx.fillRect(0,0,canvasTwitterZ.width,canvasTwitterZ.height);
+      ctx.fillRect(0,0,canvasZ.width,canvasZ.height);
 
 
       if(greyscale) {
