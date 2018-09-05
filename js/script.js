@@ -69,8 +69,8 @@ function renderImageVanilla() {
 
 function renderImageInsta(){
   if(imageResult.length > 0) {
-    getFlexbox('instagram');
-    var canvas = getCanvas('instagram', 'Instagram');
+    getFlexbox('instagram', 'Instagram');
+    var canvas = getCanvas('instagram');
     var ctx = getCtx('instagram');
 
     var image = new Image();
