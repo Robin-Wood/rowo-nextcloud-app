@@ -23,9 +23,6 @@ logo.src = 'img/logo.png';
 var logoGreen = new Image();
 logoGreen.src = 'img/logo_green.png';
 
-var canvasVanilla = document.getElementById('vanillaImage');
-var ctxVanilla = canvasVanilla.getContext('2d');
-
 var canvasTwitter = document.getElementById('twitterImage');
 canvasTwitter.width = twitterWidth;
 canvasTwitter.height = twitterHeight;
