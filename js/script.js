@@ -210,9 +210,9 @@ function renderImageTwitterZ(greyscale){
       canvas.height = twitterHeight;
 
       ctx.filter = 'none';
-      ctx.clearRect(0,0, canvasZ.width, canvasZ.height);
+      ctx.clearRect(0,0, canvas.width, canvas.height);
       ctx.fillStyle = blendColor;
-      ctx.fillRect(0,0,canvasZ.width,canvasZ.height);
+      ctx.fillRect(0,0,canvas.width,canvas.height);
 
 
       if(greyscale) {
