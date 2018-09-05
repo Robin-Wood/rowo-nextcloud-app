@@ -395,7 +395,7 @@ function getFlexbox(id, text) {
 }
 
 function removeFlexbox(id) {
-  if(document.geltElementById(id)) {
+  if(document.getElementById(id)) {
     var elem = document.getElementById(id);
     elem.parentNode.removeChild(elem);
   }
