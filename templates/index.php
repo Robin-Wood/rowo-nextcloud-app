@@ -38,7 +38,7 @@ style('robinwoodapp', 'style');
 	</div>
 	<div id="app-content">
 		<div id="app-content-wrapper">
-			<?php print_unescaped($this->inc('content/index')); ?>
+			<div class="section screen"></div>
 		</div>
 	</div>
 </div>
