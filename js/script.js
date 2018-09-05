@@ -389,7 +389,8 @@ function getFlexbox(id, text) {
     node.setAttribute('id', id);
     node.innerHTML = '<div class="imageBox"><div class="card-up"><canvas class="finalImage"></canvas></div><div class="card-down"><span>' + text + '</span><button class="primary download">Herunterladen</button></div></div>'
     node.getElementsByClassName('download')[0].onclick = download(node.getElementsByClassName('finalImage')[0]);
-    document.getElementsByClassName('screen')[0].appendChild(node);
+    var parent = document.getElementsByClassName('screen')[0];
+    parent.insertBefore(node, parent.firstChild);
   }
   return document.getElementById(id);
 }
