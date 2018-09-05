@@ -1,17 +1,5 @@
 <div class="section screen">
 
-  <div id="flexVanilla" class="flexBox">
-    <div class="imageBox">
-      <div class="card-up">
-        <canvas id="vanillaImage" class="finalImage"></canvas>
-      </div>
-      <div class="card-down">
-        <span>Bild</span>
-        <button id="downloadItVanilla" class="primary">Herunterladen</button>
-      </div>
-    </div>
-  </div>
-
   <div id="flexTwitter" class="flexBox">
     <div class="imageBox">
       <div class="card-up">

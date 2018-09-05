@@ -77,9 +77,9 @@ function renderImageVanilla() {
       canvas.width = image.width;
       canvas.height = image.height;
       ctx.filter = 'none';
-      ctx.clearRect(0,0, canvasVanilla.width, canvasVanilla.height);
+      ctx.clearRect(0,0, canvas.width, canvas.height);
       ctx.fillStyle = blendColor;
-      ctx.fillRect(0,0,canvasVanilla.width,canvasVanilla.height);
+      ctx.fillRect(0,0,canvas.width,canvas.height);
       ctx.filter = currentFilter + ' contrast(1.2)';
       ctx.globalCompositeOperation = currentBlend;
       ctx.drawImage(image, 0, 0, image.width, image.height);
@@ -104,7 +104,7 @@ function renderImageInsta(ctx){
       ctx.globalAlpha=1;
       var gradient = ctx.createLinearGradient(0, instaHeight-barHeight*1.3, 0, instaHeight);
       gradient.addColorStop(0, 'rgba(0, 0, 0, 0)');
-      gradient.addColorStop(1, 'rgba(0, 0, 0, 0.55)');
+      gradient.addColorStop(1, 'rgba(0, 0, 0, 0.50)');
       ctx.fillStyle = gradient;
       ctx.fillRect(0, instaHeight-barHeight*1.3, instaWidth, barHeight*1.3);
       ctx.globalAlpha=1;
