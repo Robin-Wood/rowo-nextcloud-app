@@ -277,7 +277,6 @@ function download(canvas) {
     }, "image/png", 0.96);
   };
 }
-document.getElementById("downloadItVanilla").onclick = download(canvasVanilla);
 document.getElementById("downloadItTwitter").onclick = download(canvasTwitter);
 document.getElementById("downloadItTwitterZitat").onclick = download(canvasTwitterZ);
 document.getElementById("downloadItTwitterZitatG").onclick = download(canvasTwitterZG);
@@ -393,6 +392,7 @@ function getFlexbox(id, text) {
     node.setAttribute('id', id);
     node.style.display = 'block'; //remove when all are refactored
     node.innerHTML = '<div class="imageBox"><div class="card-up"><canvas class="finalImage"></canvas></div><div class="card-down"><span>' + text + '</span><button class="primary download">Herunterladen</button></div></div>'
+    node.getElementsByClassName('download')[0].onclick = download(node.getElementsByClassName('finalImage')[0]);
     document.getElementsByClassName('screen')[0].appendChild(node);
   }
   return document.getElementById(id);
