@@ -386,3 +386,12 @@ function drawImageProp(ctx, img, x, y, w, h, offsetX, offsetY) {
     // fill image in dest. rectangle
     ctx.drawImage(img, cx, cy, cw, ch,  x, y, w, h);
 }
+
+function getFlexbox(id, text) {
+  var node = document.createElement("div");
+  node.setAttribute('class', 'flexBox');
+  node.setAttribute('id', id);
+  node.innerHTML = '<div class="imageBox"><div class="card-up"><canvas class="finalImage"></canvas></div><div class="card-down"><span>' + text + '</span><button class="primary download">Herunterladen</button></div></div>'
+  var wrapper = document.document.getElementsByClassName('screen');
+  wrapper.appendChild(node);
+}
