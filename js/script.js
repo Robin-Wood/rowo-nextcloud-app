@@ -57,7 +57,7 @@ function loadImage(src){
   var reader = new FileReader();
   reader.onload = function(e){
     imageResult = e.target.result;
-    renderImageVanilla(ctxVanilla);
+    renderImageVanilla();
     renderImageTwitter(ctxTwitter);
     renderImageTwitterZ(ctxTwitterZ);
     renderImageInsta(ctxInsta1);
@@ -66,14 +66,17 @@ function loadImage(src){
 
 }
 
-function renderImageVanilla(ctx) {
-  if(imageResult.length > 0) {
-    document.getElementById("flexVanilla").style.display = 'block';
-    var image = new Image();
+function renderImageVanilla() {
 
+  if(imageResult.length > 0) {
+    getFlexbox('vanilla', 'Bild');
+    var canvas = getCanvas('vanilla');
+    var ctx = getCtx('vanilla');
+
+    var image = new Image();
     image.onload = function() {
-      canvasVanilla.width = image.width;
-      canvasVanilla.height = image.height;
+      canvas.width = image.width;
+      canvas.height = image.height;
       ctx.filter = 'none';
       ctx.clearRect(0,0, canvasVanilla.width, canvasVanilla.height);
       ctx.fillStyle = blendColor;
@@ -84,7 +87,7 @@ function renderImageVanilla(ctx) {
     };
     image.src = imageResult;
   } else {
-    document.getElementById("flexVanilla").style.display = 'none';
+    removeFlexbox('vanilla');
   }
 }
 
@@ -388,9 +391,27 @@ function drawImageProp(ctx, img, x, y, w, h, offsetX, offsetY) {
 }
 
 function getFlexbox(id, text) {
-  var node = document.createElement("div");
-  node.setAttribute('class', 'flexBox');
-  node.setAttribute('id', id);
-  node.innerHTML = '<div class="imageBox"><div class="card-up"><canvas class="finalImage"></canvas></div><div class="card-down"><span>' + text + '</span><button class="primary download">Herunterladen</button></div></div>'
-  document.getElementsByClassName('screen')[0].appendChild(node);
+  if document.getElementById(id) == null {
+    var node = document.createElement("div");
+    node.setAttribute('class', 'flexBox');
+    node.setAttribute('id', id);
+    node.style.display = 'block'; //remove when all are refactored
+    node.innerHTML = '<div class="imageBox"><div class="card-up"><canvas class="finalImage"></canvas></div><div class="card-down"><span>' + text + '</span><button class="primary download">Herunterladen</button></div></div>'
+    document.getElementsByClassName('screen')[0].appendChild(node);
+  }
+  return document.getElementById(id);
+}
+
+function removeFlexbox(id) {
+  var elem = document.getElementById(id);
+  elem.parentNode.removeChild(elem);
+  return false;
+}
+
+function getCanvas(id) {
+  return getFlexbox(id).getElementsByClassName('finalImage')[0];
+}
+
+function getCtx(id) {
+  return getCanvas(id).getContext('2d');
 }
