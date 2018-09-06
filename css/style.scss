@@ -47,6 +47,7 @@ span.fontpreload {
   #overviewPart {
     border-bottom: 1px solid #ebebeb;
     display: flex;
+    flex-basis: auto;
     flex-shrink: 0;
     overflow-x: scroll;
     padding: 10px;
@@ -85,6 +86,7 @@ span.fontpreload {
   }
 
   #detailPart {
+    flex-basis: auto;
     flex-shrink: 1;
   }
 }
