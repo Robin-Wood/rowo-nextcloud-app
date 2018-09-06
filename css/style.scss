@@ -41,6 +41,9 @@ span.fontpreload {
 
   #overviewPart {
     border-bottom: 1px solid #ebebeb;
+    flex-grow: 0,
+    flex-shrink: 1,
+    flex-basis: auto
     overflow-x: scroll;
     padding: 10px;
     width: 100%;
@@ -52,6 +55,10 @@ span.fontpreload {
   }
 
   #detailPart {
+    flex-grow: 1,
+    flex-shrink: 1,
+    flex-basis: auto
+
     .flexBox {
       height: 100%;
     }
