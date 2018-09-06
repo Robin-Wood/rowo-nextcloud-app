@@ -90,7 +90,9 @@ span.fontpreload {
     flex-basis: auto;
     flex-grow: 1;
     flex-shrink: 1;
+    height: 0px;
     margin-bottom: 0;
+    padding: 10px;
 
     canvas {
       box-shadow: 0 0 3px #adadad;
