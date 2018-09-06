@@ -389,7 +389,7 @@ function getFlexbox(id, text) {
     node.setAttribute('id', id);
     node.innerHTML = '<div class="imageBox"><div class="card-up"><canvas class="finalImage"></canvas></div><div class="card-down"><span>' + text + '</span><button class="primary download">Herunterladen</button></div></div>'
     node.getElementsByClassName('download')[0].onclick = download(node.getElementsByClassName('finalImage')[0]);
-    node.addEventListener("click", cloneFlexbox(id));
+    node.onclick = (cloneFlexbox(id));
     var parent = document.getElementById('overviewPart');
     parent.insertBefore(node, parent.firstChild);
   }
