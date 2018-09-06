@@ -395,7 +395,8 @@ function getFlexbox(id, text) {
     $(function() {
       $("#" + id).on('click', function(){
         var ele = $(this).clone(true);
-        $("#detailPart").html = ele;
+        $("#detailPart").empty();
+        $("#detailPart").append(ele);
       });
     });
   }
@@ -416,8 +417,4 @@ function getCanvas(id) {
 
 function getCtx(id) {
   return getCanvas(id).getContext('2d');
-}
-
-function copyCanvas() {
-
 }
