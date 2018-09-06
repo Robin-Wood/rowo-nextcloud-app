@@ -37,6 +37,12 @@ span.fontpreload {
     border-bottom: 1px solid #ebebeb;
   }
 
+  .section.detailPart {
+    .flexBox {
+      height: 100px;
+    }
+  }
+
   .section {
     display: flex;
     flex-wrap: wrap;
