@@ -33,14 +33,16 @@ span.fontpreload {
     }
   }
 
-  .section.overview {
+  #overviewPart {
     border-bottom: 1px solid #ebebeb;
-  }
 
-  .section.detailPart {
     .flexBox {
       height: 100px;
     }
+  }
+
+   #detailPart {
+
   }
 
   .section {
