@@ -35,7 +35,7 @@ span.fontpreload {
 
   #overviewPart {
     border-bottom: 1px solid #ebebeb;
-    height: 150px;
+    height: 200px;
     width: 100%;
   }
 
@@ -50,7 +50,6 @@ span.fontpreload {
 
     .flexBox {
       flex-basis: auto;
-      flex-grow: 1;
       margin: 10px;
       width: 500px;
 
@@ -60,6 +59,7 @@ span.fontpreload {
         width: 100%;
 
         .card-up {
+          height: 150px;
           background-color: white;
         }
 
