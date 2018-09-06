@@ -413,5 +413,5 @@ function getCtx(id) {
 }
 
 function cloneFlexbox(id) {
-  document.getElementById("detailPart").innerHTML = getFlexbox(id);
+  document.getElementById("detailPart").innerHTML = document.getElementById(id);
 }
