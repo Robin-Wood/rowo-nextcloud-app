@@ -395,7 +395,7 @@ function getFlexbox(id, text) {
     $(function() {
       $("#" + id).on('click', function(){
         var oldCanvas = $("#"+id + " .finalImage")[0];
-        var newCanvas = $("#finalfinal .finalImage")[0];
+        var newCanvas = $("#detailPart .finalImage")[0];
         newCanvas.width = oldCanvas.width;
         newCanvas.height = oldCanvas.height;
         newCanvas.getContext('2d').drawImage(oldCanvas, 0, 0);
@@ -422,12 +422,8 @@ function getCtx(id) {
 }
 
 $(function() {
-  var id = "finalfinal";
-  var node = document.createElement("div");
-  node.setAttribute('class', 'flexBox');
-  node.setAttribute('id', id);
-  node.innerHTML = '<div class="imageBox"><div class="card-up"><canvas class="finalImage"></canvas></div><div class="card-down"><span></span><button class="primary download">Herunterladen</button></div></div>'
-  node.getElementsByClassName('download')[0].onclick = download(node.getElementsByClassName('finalImage')[0]);
+  var node = document.createElement("canvas");
+  node.setAttribute('class', 'finalImage');
   $("#detailPart").empty();
   $("#detailPart").append(node);
 });

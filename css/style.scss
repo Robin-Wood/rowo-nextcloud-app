@@ -43,27 +43,13 @@ span.fontpreload {
     height: 100%;
   }
 
+
   #overviewPart {
     border-bottom: 1px solid #ebebeb;
+    display: flex;
     flex-shrink: 0;
     overflow-x: scroll;
     padding: 10px;
-    width: 100%;
-
-    .card-up {
-      height: 150px;
-      background-color: white;
-    }
-  }
-
-  #detailPart {
-    .flexBox {
-      height: 100%;
-    }
-  }
-
-  .section {
-    display: flex;
     width: 100%;
 
     .flexBox {
@@ -77,6 +63,7 @@ span.fontpreload {
         width: 100%;
 
         .card-up {
+          height: 150px;
           background-color: white;
         }
 
@@ -99,14 +86,9 @@ span.fontpreload {
 }
 
 
-.imageBox {
-
-
   .finalImage {
     display: block;
     margin: auto;
     max-height: 100%;
     max-width: 100%;
   }
-
-}
