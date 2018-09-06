@@ -394,9 +394,11 @@ function getFlexbox(id, text) {
     parent.insertBefore(node, parent.firstChild);
     $(function() {
       $("#" + id).on('click', function(){
-        var oldcanvas = $("#"+id).closest(".finalImage");
-        var context = $("#finalfinal").closest(".finalImage").getContext('2d');
-        context.drawImage(oldCanvas, 0, 0);
+        var oldCanvas = $("#"+id).closest(".finalImage");
+        var newCanvas = $("#finalfinal").closest(".finalImage");
+        newCanvas.width = oldCanvas.width;
+        newCanvas.height = oldCanvas.height;
+        newCanvas.getContext('2d').drawImage(oldCanvas, 0, 0);
       });
     });
   }
