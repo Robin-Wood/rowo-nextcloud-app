@@ -394,8 +394,8 @@ function getFlexbox(id, text) {
     parent.insertBefore(node, parent.firstChild);
     $(function() {
       $("#" + id).on('click', function(){
-        var oldCanvas = $("#"+id).closest(".finalImage")[0];
-        var newCanvas = $("#finalfinal").closest(".finalImage")[0];
+        var oldCanvas = $("#"+id + " .finalImage")[0];
+        var newCanvas = $("#finalfinal .finalImage")[0];
         newCanvas.width = oldCanvas.width;
         newCanvas.height = oldCanvas.height;
         newCanvas.getContext('2d').drawImage(oldCanvas, 0, 0);
