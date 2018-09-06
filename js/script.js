@@ -395,7 +395,7 @@ function getFlexbox(id, text) {
     $(function() {
       $("#" + id).on('click', function(){
         var ele = $(this).clone(true);
-        $(#detailPart).html = ele;
+        $("#detailPart").html = ele;
       });
     });
   }
