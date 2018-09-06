@@ -42,7 +42,8 @@ style('robinwoodapp', 'style');
 	</div>
 	<div id="app-content">
 		<div id="app-content-wrapper">
-			<div class="section screen"></div>
+			<div class="section" id="overviewPart"></div>
+			<div class="section" id="detailPart"></div>
 		</div>
 	</div>
 </div>
