@@ -33,6 +33,12 @@ span.fontpreload {
     }
   }
 
+  #app-content-images {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+  }
+
   #overviewPart {
     border-bottom: 1px solid #ebebeb;
     overflow-x: scroll;
