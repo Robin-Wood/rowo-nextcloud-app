@@ -389,7 +389,10 @@ function getFlexbox(id, text) {
     node.setAttribute('id', id);
     node.innerHTML = '<div class="imageBox"><div class="card-up"><canvas class="finalImage"></canvas></div><div class="card-down"><span>' + text + '</span><button class="primary download">Herunterladen</button></div></div>'
     node.getElementsByClassName('download')[0].onclick = download(node.getElementsByClassName('finalImage')[0]);
-    node.onclick = cloneFlexbox(id);
+    $("#" + id).on('click', function(){
+      var ele = $(this).clone(true);
+      $(this).after(ele);
+    })
     var parent = document.getElementById('overviewPart');
     parent.insertBefore(node, parent.firstChild);
   }
@@ -410,8 +413,4 @@ function getCanvas(id) {
 
 function getCtx(id) {
   return getCanvas(id).getContext('2d');
-}
-
-function cloneFlexbox(id) {
-  document.getElementById("detailPart").innerHTML = document.getElementById(id);
 }
