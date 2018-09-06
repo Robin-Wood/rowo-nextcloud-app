@@ -87,12 +87,14 @@ span.fontpreload {
   }
 
   #detailPart {
-    background-color: grey;
     flex-basis: auto;
     flex-grow: 1;
     flex-shrink: 1;
     margin-bottom: 0;
-    padding: 0;
+
+    canvas {
+      box-shadow: 0 0 3px #adadad;
+    }
   }
 }
 
