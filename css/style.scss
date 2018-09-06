@@ -49,7 +49,7 @@ span.fontpreload {
     display: flex;
     flex-basis: auto;
     flex-shrink: 0;
-    margin-bottom: none;
+    margin-bottom: 0;
     overflow-x: scroll;
     padding: 10px;
     width: 100%;
@@ -90,8 +90,8 @@ span.fontpreload {
     background-color: grey;
     flex-basis: auto;
     flex-shrink: 1;
-    margin-bottom: none;
-    padding: none;
+    margin-bottom: 0;
+    padding: 0;
   }
 }
 
