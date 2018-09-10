@@ -394,7 +394,7 @@ function getFlexbox(id, text) {
     parent.insertBefore(node, parent.firstChild);
     $(function() {
       $("#" + id).on('click', function(){
-        $("#" + id).parent.children().each(function () {
+        $("#" + id).parent().children().each(function () {
           this.removeClass( "active" );
         });
         $("#" + id).addClass( "active" );
