@@ -424,10 +424,3 @@ function getCanvas(id) {
 function getCtx(id) {
   return getCanvas(id).getContext('2d');
 }
-
-$(function() {
-  var node = document.createElement("canvas");
-  node.setAttribute('class', 'finalImage');
-  $("#detailPart").empty();
-  $("#detailPart").append(node);
-});

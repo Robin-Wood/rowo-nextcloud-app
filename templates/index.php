@@ -43,7 +43,15 @@ style('robinwoodapp', 'style');
 	<div id="app-content">
 		<div id="app-content-images">
 			<div class="section" id="overviewPart"></div>
-			<div class="section" id="detailPart"></div>
+			<div class="section" id="detailPart">
+				<div class="card-up">
+					<canvas class="finalImage">
+					</canvas>
+				</div>
+				<div class="card-down">
+					<span class="bezeichnung"></span>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
