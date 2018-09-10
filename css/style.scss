@@ -83,6 +83,11 @@ span.fontpreload {
 
     .imageBox {
       box-shadow: 0px 0px 7px 0px #adadad;
+
+      .finalImage {
+        max-height: 500px;
+        max-height: calc(100vh - 375px);
+      }
     }
   }
 }
