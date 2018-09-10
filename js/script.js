@@ -398,6 +398,7 @@ function getFlexbox(id, text) {
           $(this).removeClass('active');
         });
         $("#" + id).addClass("active");
+        $("#detailPart .bezeichnung").text(text);
         var oldCanvas = $("#"+id + " .finalImage")[0];
         var newCanvas = $("#detailPart .finalImage")[0];
         newCanvas.width = oldCanvas.width;
