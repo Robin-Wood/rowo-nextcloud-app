@@ -394,7 +394,9 @@ function getFlexbox(id, text) {
     parent.insertBefore(node, parent.firstChild);
     $(function() {
       $("#" + id).on('click', function(){
-        $("#" + id).addClass( "myClass yourClass" );
+        $("#" + id).parent.children().each(function () {
+          this.removeClass ( "active" );
+        $("#" + id).addClass( "active" );
         var oldCanvas = $("#"+id + " .finalImage")[0];
         var newCanvas = $("#detailPart .finalImage")[0];
         newCanvas.width = oldCanvas.width;
