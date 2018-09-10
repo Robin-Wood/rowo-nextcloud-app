@@ -64,11 +64,6 @@ span.fontpreload {
       &:hover {
         box-shadow: 0px 0px 7px 0px #adadad;
       }
-
-      .imageBox {
-        background-color: #f5f5f5;
-        width: 100%;
-      }
     }
   }
 
@@ -80,28 +75,33 @@ span.fontpreload {
     margin-bottom: 0;
     padding: 10px;
 
-    canvas {
+    .imageBox {
       box-shadow: 0px 0px 7px 0px #adadad;
     }
   }
 }
 
-.card-up {
-  height: 150px;
-  background-color: white;
-}
+.imageBox {
+  background-color: #f5f5f5;
+  width: 100%;
 
-.card-down {
-  height: 50px;
-  padding: 5px;
-
-  span {
-    display: inline-block;
-    margin: 10px;
+  .card-up {
+    height: 150px;
+    background-color: white;
   }
 
-  button {
-    float: right;
+  .card-down {
+    height: 50px;
+    padding: 5px;
+
+    span {
+      display: inline-block;
+      margin: 10px;
+    }
+
+    button {
+      float: right;
+    }
   }
 }
 
