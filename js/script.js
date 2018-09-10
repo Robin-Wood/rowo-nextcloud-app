@@ -396,7 +396,7 @@ function getFlexbox(id, text) {
       $("#" + id).on('click', function(){
         $("#" + id).parent.children().each(function () {
           this.removeClass( "active" );
-        }
+        });
         $("#" + id).addClass( "active" );
         var oldCanvas = $("#"+id + " .finalImage")[0];
         var newCanvas = $("#detailPart .finalImage")[0];
