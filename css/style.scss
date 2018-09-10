@@ -63,6 +63,10 @@ span.fontpreload {
         box-shadow: 0px 0px 7px 0px #adadad;
       }
 
+      &.inactive {
+        box-shadow: 0px 0px 7px 0px #ededed;
+      }
+
       .imageBox {
         background-color: #f5f5f5;
         box-shadow: 0 0 3px #adadad;
