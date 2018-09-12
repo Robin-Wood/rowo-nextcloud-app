@@ -64,7 +64,7 @@ function renderImageVanilla() {
       ctx.filter = currentFilter + ' contrast(1.2)';
       ctx.globalCompositeOperation = currentBlend;
       ctx.drawImage(image, 0, 0, image.width, image.height);
-      if(currentId = id) {
+      if(currentId == id) {
         updateDetail(currentId);
       }
     };
@@ -107,7 +107,7 @@ function renderImageInsta(){
         ctx.font = '22px MarkOT';
         ctx.fillText('Foto: ' + quelle, 22, instaHeight-22);
       }
-      if(currentId = id) {
+      if(currentId == id) {
         updateDetail(currentId);
       }
     };
@@ -195,7 +195,7 @@ function renderImageTwitter(){
         ctx.font = '18px MarkOT';
         ctx.fillText('Foto: ' + quelle, 32, 489);
       }
-      if(currentId = id) {
+      if(currentId == id) {
         updateDetail(currentId);
       }
     };
@@ -274,7 +274,7 @@ function renderImageTwitterZ(greyscale){
           ctx.fillText(lines[i], twitterWidth*spalte, twitterHeight*(0.45-(lines.length-1-i)*0.08));
         }
       }
-      if(currentId = id) {
+      if(currentId == id) {
         updateDetail(currentId);
       }
     };
