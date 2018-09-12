@@ -384,14 +384,8 @@ function drawImageProp(ctx, img, x, y, w, h, offset) {
     cw = iw / (nw / w);
     ch = ih / (nh / h);
 
-    cx = (iw - cw)
-    if (iw/ih < w/h) {
-      cx *= offset;
-    }
-    cy = (ih - ch);
-    if (iw/ih > w/h) {
-      cy *= offset;
-    }
+    cx = (iw - cw) * offset;
+    cy = (ih - ch) * offset;
 
     // make sure source rectangle is valid
     if (cx < 0) cx = 0;
