@@ -40,6 +40,7 @@ function loadImage(src){
     renderImageTwitter();
     renderImageTwitterZ();
     renderImageInsta();
+    updateDetail(currentId);
   };
   reader.readAsDataURL(src);
 
@@ -286,6 +287,7 @@ var sloganInput = document.getElementById('slogan');
 sloganInput.addEventListener('keyup', function() {
   slogan = this.value.replace(/[\.\?\!\-\€\„\“\"]/g,"$& ");
   renderImageTwitter();
+  updateDetail(currentId);
 });
 
 var quelleInput = document.getElementById('quelle');
@@ -295,6 +297,7 @@ quelleInput.addEventListener('keyup', function() {
   renderImageTwitterZ(false);
   renderImageTwitterZ(true);
   renderImageInsta();
+  updateDetail(currentId);
 });
 
 var zitatgeberinInput = document.getElementById('zitatgeberin');
@@ -302,18 +305,21 @@ zitatgeberinInput.addEventListener('keyup', function() {
   zitatgeberin = this.value;
   renderImageTwitterZ(false);
   renderImageTwitterZ(true);
+  updateDetail(currentId);
 });
 var zitatfunktionInput = document.getElementById('zitatfunktion');
 zitatfunktionInput.addEventListener('keyup', function() {
   zitatfunktion = this.value;
   renderImageTwitterZ(false);
   renderImageTwitterZ(true);
+  updateDetail(currentId);
 });
 var zitatInput = document.getElementById('zitat');
 zitatInput.addEventListener('keyup', function() {
   zitat = this.value;
   renderImageTwitterZ(false);
   renderImageTwitterZ(true);
+  updateDetail(currentId);
 });
 
 // Set up filepicker button
@@ -435,3 +441,7 @@ $(function() {
     node.getElementsByClassName('download')[0].onclick = download(node.getElementsByClassName('finalImage')[0]);
   });
 });
+
+function updateDetail(id) {
+  document.getElementById(id).click();
+}
