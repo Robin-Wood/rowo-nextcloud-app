@@ -41,17 +41,17 @@ function loadImage(src){
     renderImageTwitter();
     renderImageTwitterZ();
     renderImageInsta();
-    updateDetail(currentId);
   };
   reader.readAsDataURL(src);
 
 }
 
 function renderImageVanilla() {
+  id = 'vanilla';
   if(imageResult.length > 0) {
-    getFlexbox('vanilla', 'Bild');
-    var canvas = getCanvas('vanilla');
-    var ctx = getCtx('vanilla');
+    getFlexbox(id, 'Bild');
+    var canvas = getCanvas(id);
+    var ctx = getCtx(id);
 
     var image = new Image();
     image.onload = function() {
@@ -66,16 +66,20 @@ function renderImageVanilla() {
       ctx.drawImage(image, 0, 0, image.width, image.height);
     };
     image.src = imageResult;
+    if(currentId = id) {
+      updateDetail(currentId);
+    }
   } else {
-    removeFlexbox('vanilla');
+    removeFlexbox(id);
   }
 }
 
 function renderImageInsta(){
+  id = 'instagram';
   if(imageResult.length > 0) {
-    getFlexbox('instagram', 'Instagram');
-    var canvas = getCanvas('instagram');
-    var ctx = getCtx('instagram');
+    getFlexbox(id, id);
+    var canvas = getCanvas(id);
+    var ctx = getCtx(id);
 
     var image = new Image();
 
@@ -105,16 +109,20 @@ function renderImageInsta(){
       }
     };
     image.src = imageResult;
+    if(currentId = id) {
+      updateDetail(currentId);
+    }
   } else {
-    removeFlexbox('instagram');
+    removeFlexbox(id);
   }
 }
 
 function renderImageTwitter(){
+  id = 'twitter';
   if(imageResult.length > 0 && slogan.length > 0) {
-    getFlexbox('twitter', 'Twitter: Slogan');
-    var canvas = getCanvas('twitter');
-    var ctx = getCtx('twitter');
+    getFlexbox(id, 'Twitter: Slogan');
+    var canvas = getCanvas(id);
+    var ctx = getCtx(id);
 
     var twitterImage = new Image();
 
@@ -189,22 +197,24 @@ function renderImageTwitter(){
       }
     };
     twitterImage.src = imageResult;
+    if(currentId = id) {
+      updateDetail(currentId);
+    }
   } else {
-    removeFlexbox('twitter');
+    removeFlexbox(id);
   }
 }
 
 function renderImageTwitterZ(greyscale){
+  if(greyscale) {
+    id = 'twitter1';
+  } else {
+    id = 'twitter2';
+  }
   if(imageResult.length > 0 && ( zitatgeberin.length > 0 || zitat.length > 0 || zitatfunktion.length > 0 ) ) {
-    if(greyscale) {
-      getFlexbox('twitter1', 'Twitter: Zitatbox Einzelperson')
-      var canvas = getCanvas('twitter1');
-      var ctx = getCtx('twitter1');
-    } else {
-      getFlexbox('twitter2', 'Twitter: Zitatbox Einzelperson')
-      var canvas = getCanvas('twitter2');
-      var ctx = getCtx('twitter2');
-    }
+    getFlexbox(id, 'Twitter: Zitatbox Einzelperson')
+    var canvas = getCanvas(id);
+    var ctx = getCtx(id);
 
     var spalte = 0.54;
     var image = new Image();
@@ -266,12 +276,12 @@ function renderImageTwitterZ(greyscale){
       }
     };
     image.src = imageResult;
-  } else {
-    if(greyscale) {
-      removeFlexbox('twitter1');
-    } else {
-      removeFlexbox('twitter2');
+    if(currentId = id) {
+      updateDetail(currentId);
     }
+  } else {
+    removeFlexbox(id);
+    removeFlexbox(id);
   }
 }
 
@@ -288,7 +298,6 @@ var sloganInput = document.getElementById('slogan');
 sloganInput.addEventListener('keyup', function() {
   slogan = this.value.replace(/[\.\?\!\-\€\„\“\"]/g,"$& ");
   renderImageTwitter();
-  updateDetail(currentId);
 });
 
 var quelleInput = document.getElementById('quelle');
@@ -298,7 +307,6 @@ quelleInput.addEventListener('keyup', function() {
   renderImageTwitterZ(false);
   renderImageTwitterZ(true);
   renderImageInsta();
-  updateDetail(currentId);
 });
 
 var zitatgeberinInput = document.getElementById('zitatgeberin');
@@ -306,21 +314,18 @@ zitatgeberinInput.addEventListener('keyup', function() {
   zitatgeberin = this.value;
   renderImageTwitterZ(false);
   renderImageTwitterZ(true);
-  updateDetail(currentId);
 });
 var zitatfunktionInput = document.getElementById('zitatfunktion');
 zitatfunktionInput.addEventListener('keyup', function() {
   zitatfunktion = this.value;
   renderImageTwitterZ(false);
   renderImageTwitterZ(true);
-  updateDetail(currentId);
 });
 var zitatInput = document.getElementById('zitat');
 zitatInput.addEventListener('keyup', function() {
   zitat = this.value;
   renderImageTwitterZ(false);
   renderImageTwitterZ(true);
-  updateDetail(currentId);
 });
 
 $( "#ausschnitt" ).change(function() {
@@ -329,7 +334,6 @@ $( "#ausschnitt" ).change(function() {
   renderImageTwitter();
   renderImageTwitterZ();
   renderImageInsta();
-  updateDetail(currentId);
 });
 
 // Set up filepicker button
