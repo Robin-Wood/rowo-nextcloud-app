@@ -443,5 +443,8 @@ $(function() {
 });
 
 function updateDetail(id) {
-  document.getElementById(id).click();
+  node = document.getElementById(id);
+  if(node != null) {
+    node.click();
+  }
 }
