@@ -86,7 +86,7 @@ function renderImageInsta(){
       canvas.height = instaHeight;
 
       ctx.filter = 'none';
-      drawImageProp(ctx, image, 0, 0, instaWidth, instaHeight);
+      drawImageProp(ctx, image, 0, 0, instaWidth, instaHeight, offset);
       ctx.fillStyle = blendColor;
       ctx.globalAlpha=1;
       var gradient = ctx.createLinearGradient(0, instaHeight-barHeight*1.3, 0, instaHeight);
@@ -128,7 +128,7 @@ function renderImageTwitter(){
       ctx.fillRect(0,0,canvas.width,canvas.height);
       ctx.filter = currentFilter + ' contrast(1.6)';
       ctx.globalCompositeOperation = currentBlend;
-      drawImageProp(ctx, twitterImage, 0, 0, twitterWidth, twitterHeight);
+      drawImageProp(ctx, twitterImage, 0, 0, twitterWidth, twitterHeight, offset);
 
       ctx.globalCompositeOperation = 'source-over';
       ctx.fillStyle = 'white';
@@ -224,7 +224,7 @@ function renderImageTwitterZ(greyscale){
       } else  {
         ctx.filter = 'none';
       }
-      drawImageProp(ctx, image, 0, 0, twitterWidth*0.51, twitterHeight);
+      drawImageProp(ctx, image, 0, 0, twitterWidth*0.51, twitterHeight, offset);
       ctx.drawImage(logo,twitterWidth*spalte,twitterHeight*0.84,360,360/logoRatio);
 
       if(quelle.length > 0) {
@@ -320,6 +320,15 @@ zitatInput.addEventListener('keyup', function() {
   zitat = this.value;
   renderImageTwitterZ(false);
   renderImageTwitterZ(true);
+  updateDetail(currentId);
+});
+
+$( "#ausschnitt" ).change(function() {
+  offset = $( this ).val();
+  renderImageVanilla();
+  renderImageTwitter();
+  renderImageTwitterZ();
+  renderImageInsta();
   updateDetail(currentId);
 });
 
