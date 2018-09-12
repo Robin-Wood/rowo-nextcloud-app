@@ -72,6 +72,10 @@ span.fontpreload {
 
         .card-down {
           height: 40px;
+
+          span {
+            margin: 5px;
+          }
         }
       }
     }
@@ -91,7 +95,7 @@ span.fontpreload {
 
       .finalImage {
         max-height: 500px;
-        max-height: calc(100vh - 395px);
+        max-height: calc(100vh - 385px);
       }
     }
   }
