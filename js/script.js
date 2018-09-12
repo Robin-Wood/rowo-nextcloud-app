@@ -429,4 +429,5 @@ function getCtx(id) {
 $(function() {
   $("#downloadMain").on('click', function(){
     download($("#downloadMain .finalImage")[0]);
+  });
 });
