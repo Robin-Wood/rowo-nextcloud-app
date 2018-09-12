@@ -28,6 +28,7 @@ var quelle = "";
 var zitatgeberin = "";
 var zitatfunktion = "";
 var zitat = "";
+var offset = 0.5;
 
 var currentId = "";
 
@@ -342,7 +343,7 @@ function cutIntoLines(ctx, text, width) {
   return lines;
 }
 
-function drawImageProp(ctx, img, x, y, w, h, offsetX, offsetY) {
+function drawImageProp(ctx, img, x, y, w, h, offset) {
 
     if (arguments.length === 2) {
         x = y = 0;
@@ -351,14 +352,11 @@ function drawImageProp(ctx, img, x, y, w, h, offsetX, offsetY) {
     }
 
     // default offset is center
-    offsetX = typeof offsetX === "number" ? offsetX : 0.5;
-    offsetY = typeof offsetY === "number" ? offsetY : 0.5;
+    offset = typeof offset === "number" ? offset : 0.5;
 
     // keep bounds [0.0, 1.0]
-    if (offsetX < 0) offsetX = 0;
-    if (offsetY < 0) offsetY = 0;
-    if (offsetX > 1) offsetX = 1;
-    if (offsetY > 1) offsetY = 1;
+    if (offset < 0) offset = 0;
+    if (offset > 1) offset = 1;
 
     var iw = img.width,
         ih = img.height,
@@ -377,8 +375,14 @@ function drawImageProp(ctx, img, x, y, w, h, offsetX, offsetY) {
     cw = iw / (nw / w);
     ch = ih / (nh / h);
 
-    cx = (iw - cw) * offsetX;
-    cy = (ih - ch) * offsetY;
+    cx = (iw - cw)
+    if (iw/ih < w/h) {
+      cx *= offset;
+    }
+    cy = (ih - ch);
+    if (iw/ih > w/h) {
+      cy *= offset;
+    }
 
     // make sure source rectangle is valid
     if (cx < 0) cx = 0;
