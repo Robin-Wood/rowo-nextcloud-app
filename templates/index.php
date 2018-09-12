@@ -51,6 +51,7 @@ style('robinwoodapp', 'style');
 					</div>
 					<div class="card-down">
 						<span class="bezeichnung"></span>
+						<button id="downloadMain" class="primary download">Herunterladen</button>
 					</div>
 				</div>
 			</div>

@@ -425,3 +425,8 @@ function getCanvas(id) {
 function getCtx(id) {
   return getCanvas(id).getContext('2d');
 }
+
+$(function() {
+  $("#downloadMain").on('click', function(){
+    download($("#downloadMain .finalImage")[0]);
+});
