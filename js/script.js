@@ -324,7 +324,7 @@ zitatInput.addEventListener('keyup', function() {
 });
 
 $( "#ausschnitt" ).change(function() {
-  offset = $( this ).val();
+  offset = parseFloat($( this ).val());
   renderImageVanilla();
   renderImageTwitter();
   renderImageTwitterZ();
