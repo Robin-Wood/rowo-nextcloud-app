@@ -29,6 +29,8 @@ var zitatgeberin = "";
 var zitatfunktion = "";
 var zitat = "";
 
+var currentId = "";
+
 // Pass image to render function
 function loadImage(src){
   var reader = new FileReader();
@@ -404,6 +406,7 @@ function getFlexbox(id, text) {
         newCanvas.width = oldCanvas.width;
         newCanvas.height = oldCanvas.height;
         newCanvas.getContext('2d').drawImage(oldCanvas, 0, 0);
+        currentId = id;
       });
     });
   }
