@@ -39,7 +39,8 @@ function loadImage(src){
     imageResult = e.target.result;
     renderImageVanilla();
     renderImageTwitter();
-    renderImageTwitterZ();
+    renderImageTwitterZ(true);
+    renderImageTwitterZ(false);
     renderImageInsta();
   };
   reader.readAsDataURL(src);
@@ -332,7 +333,8 @@ $( "#ausschnitt" ).change(function() {
   offset = parseFloat($( this ).val());
   renderImageVanilla();
   renderImageTwitter();
-  renderImageTwitterZ();
+  renderImageTwitterZ(false);
+  renderImageTwitterZ(true);
   renderImageInsta();
 });
 
