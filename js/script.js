@@ -294,14 +294,12 @@ function download(canvas) {
   };
 }
 
-var sloganInput = document.getElementById('slogan');
-sloganInput.addEventListener('keyup', function() {
+$( "#slogan" ).on("keyup change", function() {
   slogan = this.value.replace(/[\.\?\!\-\€\„\“\"]/g,"$& ");
   renderImageTwitter();
 });
 
-var quelleInput = document.getElementById('quelle');
-quelleInput.addEventListener('keyup', function() {
+$( "#quelle" ).on("keyup change", function() {
   quelle = this.value;
   renderImageTwitter();
   renderImageTwitterZ(false);
@@ -309,25 +307,25 @@ quelleInput.addEventListener('keyup', function() {
   renderImageInsta();
 });
 
-var zitatgeberinInput = document.getElementById('zitatgeberin');
-zitatgeberinInput.addEventListener('keyup', function() {
+$( "#zitatgeberin" ).on("keyup change", function() {
   zitatgeberin = this.value;
   renderImageTwitterZ(false);
   renderImageTwitterZ(true);
 });
-var zitatfunktionInput = document.getElementById('zitatfunktion');
-zitatfunktionInput.addEventListener('keyup', function() {
+
+$( "#zitatfunktion" ).on("keyup change", function() {
   zitatfunktion = this.value;
   renderImageTwitterZ(false);
   renderImageTwitterZ(true);
 });
+
 $( "#zitat" ).on("keyup change", function() {
   zitat = $( this ).val();
   renderImageTwitterZ(false);
   renderImageTwitterZ(true);
 });
 
-$( "#ausschnitt" ).change(function() {
+$( "#ausschnitt" ).on("change input", function() {
   offset = parseFloat($( this ).val());
   renderImageVanilla();
   renderImageTwitter();
