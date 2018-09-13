@@ -282,7 +282,6 @@ function renderImageTwitterZ(greyscale){
     image.src = imageResult;
   } else {
     removeFlexbox(id);
-    removeFlexbox(id);
   }
 }
 
@@ -322,9 +321,8 @@ zitatfunktionInput.addEventListener('keyup', function() {
   renderImageTwitterZ(false);
   renderImageTwitterZ(true);
 });
-var zitatInput = document.getElementById('zitat');
-zitatInput.addEventListener('keyup', function() {
-  zitat = this.value;
+$( "#zitat" ).change(function() {
+  zitat = $( this ).val();
   renderImageTwitterZ(false);
   renderImageTwitterZ(true);
 });
