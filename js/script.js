@@ -48,7 +48,7 @@ function loadImage(src){
 }
 
 function renderImageVanilla() {
-  id = 'vanilla';
+  let id = 'vanilla';
   if(imageResult.length > 0) {
     getFlexbox(id, 'Bild');
     var canvas = getCanvas(id);
@@ -76,7 +76,7 @@ function renderImageVanilla() {
 }
 
 function renderImageInsta(){
-  id = 'instagram';
+  let id = 'instagram';
   if(imageResult.length > 0) {
     getFlexbox(id, id);
     var canvas = getCanvas(id);
@@ -119,7 +119,7 @@ function renderImageInsta(){
 }
 
 function renderImageTwitter(){
-  id = 'twitter';
+  let id = 'twitter';
   if(imageResult.length > 0 && slogan.length > 0) {
     getFlexbox(id, 'Twitter: Slogan');
     var canvas = getCanvas(id);
@@ -207,6 +207,7 @@ function renderImageTwitter(){
 }
 
 function renderImageTwitterZ(greyscale){
+  let id = '';
   if(greyscale) {
     id = 'twitter1';
   } else {
