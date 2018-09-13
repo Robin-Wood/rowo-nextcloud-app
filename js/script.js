@@ -322,6 +322,7 @@ zitatfunktionInput.addEventListener('keyup', function() {
   renderImageTwitterZ(true);
 });
 $( "#zitat" ).on("keyup change", function() {
+  zitat = $( this ).val();
   renderImageTwitterZ(false);
   renderImageTwitterZ(true);
 });
