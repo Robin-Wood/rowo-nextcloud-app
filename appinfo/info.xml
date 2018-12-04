@@ -19,5 +19,10 @@
             <name>Bild-Generator</name>
             <route>robinwoodapp.page.index</route>
         </navigation>
+        <navigation role="admin">
+          <name>ROBIN WOOD</name>
+          <route>robinwoodapp.page.index</route>
+          <order>0</order>
+        </navigation>
     </navigations>
 </info>
