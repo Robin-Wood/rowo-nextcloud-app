@@ -16,11 +16,6 @@
     </dependencies>
     <navigations>
       <navigation>
-        <name>ROBIN WOOD Aktivenplattform</name>
-        <route>robinwoodapp.dash.index</route>
-        <id>dashboard</id>
-      </navigation>
-      <navigation>
         <name>Bild-Generator</name>
         <route>robinwoodapp.page.index</route>
       </navigation>
