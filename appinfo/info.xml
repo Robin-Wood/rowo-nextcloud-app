@@ -18,6 +18,7 @@
       <navigation>
         <name>ROBIN WOOD Aktivenplattform</name>
         <route>robinwoodapp.dash.index</route>
+        <id>dashboard</id>
       </navigation>
       <navigation>
         <name>Bild-Generator</name>
