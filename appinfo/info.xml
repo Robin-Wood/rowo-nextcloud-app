@@ -15,13 +15,13 @@
         <nextcloud min-version="13" max-version="13"/>
     </dependencies>
     <navigations>
-<!--      <navigation>
+      <navigation>
         <name>ROBIN WOOD Aktivenplattform</name>
         <route>robinwoodapp.dash.index</route>
-      </navigation>-->
-      <navigation>
+      </navigation>
+<!--      <navigation>
         <name>Bild-Generator</name>
         <route>robinwoodapp.page.index</route>
-      </navigation>
+      </navigation>-->
     </navigations>
 </info>
