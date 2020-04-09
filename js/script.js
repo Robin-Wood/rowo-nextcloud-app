@@ -291,7 +291,7 @@ function renderImages() {
     if (slogan.length != 0) {
       renderImageTwitter();
     }
-    if zitatgeberin.length != 0 || zitatfunktion.length!=0 {
+    if (zitatgeberin.length != 0 || zitatfunktion.length!=0) {
       renderImageTwitterZ(false);
       renderImageTwitterZ(true);
     }
