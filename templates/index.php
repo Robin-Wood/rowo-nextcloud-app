@@ -7,7 +7,17 @@ style('robinwoodapp', 'style');
 <div id="app">
 	<div id="app-navigation">
 		<div id="app-settings-content">
-			<p>Dieses Werkzeug wandelt Bilder in schwarz-grüne Bilder für ROBIN WOOD-Veröffentlichungen um<span class="fontpreload">.</span></p>
+			<p>Dieses Werkzeug generiert Grafiken für ROBIN WOOD-Veröffentlichungen um<span class="fontpreload">.</span></p>
+			<label>
+        <span>Plattform</span><br>
+        <input type="radio" id="twitter" name="plattform" value="twitter" class="radio">
+        <label for="twitter">Twitter</label><br>
+        <input type="radio" id="instagram" name="plattform" value="instagram" class="radio">
+        <label for="instagram">Instagram</label><br>
+        <input type="radio" id="divers" name="plattform" value="divers" class="radio">
+        <label for="divers">Allgemein</label><br>
+        </span>
+			</label>
 			<label>
 				<span>Bild-Datei</span>
 				<input type="file" name="file" id="file" accept="image/*" capture>

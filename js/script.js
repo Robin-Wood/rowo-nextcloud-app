@@ -286,6 +286,24 @@ function renderImageTwitterZ(greyscale){
   }
 }
 
+function renderImages() {
+  if($("#twitter").is(':checked')) {
+    if slogan.length != 0 {
+      renderImageTwitter();
+    }
+    if zitatgeberin.length != 0 || zitatfunktion.length!=0 {
+      renderImageTwitterZ(false);
+      renderImageTwitterZ(true);
+    }
+  }
+  else if ($("#instagram").is(':checked')) {
+    renderImageInsta();
+  }
+  else if $("#divers").is(':checked')) {
+    renderImageVanilla();
+  }
+}
+
 // Download contents on canvas using filesaver.js
 function download(canvas) {
   return function() {
@@ -295,44 +313,39 @@ function download(canvas) {
   };
 }
 
+$( "#twitter, #instagram, #divers" ).change(function() {
+  removeAll();
+  renderImages();
+});
+
 $( "#slogan" ).on("keyup change", function() {
   slogan = this.value.replace(/[\.\?\!\-\€\„\“\"]/g,"$& ");
-  renderImageTwitter();
+  renderImages();
 });
 
 $( "#quelle" ).on("keyup change", function() {
   quelle = this.value;
-  renderImageTwitter();
-  renderImageTwitterZ(false);
-  renderImageTwitterZ(true);
-  renderImageInsta();
+  renderImages();
 });
 
 $( "#zitatgeberin" ).on("keyup change", function() {
   zitatgeberin = this.value;
-  renderImageTwitterZ(false);
-  renderImageTwitterZ(true);
+  renderImages();
 });
 
 $( "#zitatfunktion" ).on("keyup change", function() {
   zitatfunktion = this.value;
-  renderImageTwitterZ(false);
-  renderImageTwitterZ(true);
+  renderImages();
 });
 
 $( "#zitat" ).on("keyup change", function() {
   zitat = $( this ).val();
-  renderImageTwitterZ(false);
-  renderImageTwitterZ(true);
+  renderImages();
 });
 
 $( "#ausschnitt" ).on("change input", function() {
   offset = parseFloat($( this ).val());
-  renderImageVanilla();
-  renderImageTwitter();
-  renderImageTwitterZ(false);
-  renderImageTwitterZ(true);
-  renderImageInsta();
+  renderImages();
 });
 
 // Set up filepicker button
@@ -435,6 +448,10 @@ function removeFlexbox(id) {
     elem.parentNode.removeChild(elem);
   }
   return false;
+}
+
+function removeAll() {
+  $("#overviewPart").empty();
 }
 
 function getCanvas(id) {
