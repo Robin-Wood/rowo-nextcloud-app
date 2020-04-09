@@ -37,11 +37,7 @@ function loadImage(src){
   var reader = new FileReader();
   reader.onload = function(e){
     imageResult = e.target.result;
-    renderImageVanilla();
-    renderImageTwitter();
-    renderImageTwitterZ(true);
-    renderImageTwitterZ(false);
-    renderImageInsta();
+    renderImages();
   };
   reader.readAsDataURL(src);
 
