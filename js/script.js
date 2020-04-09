@@ -288,7 +288,7 @@ function renderImageTwitterZ(greyscale){
 
 function renderImages() {
   if($("#twitter").is(':checked')) {
-    if slogan.length != 0 {
+    if (slogan.length != 0) {
       renderImageTwitter();
     }
     if zitatgeberin.length != 0 || zitatfunktion.length!=0 {
