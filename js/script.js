@@ -44,7 +44,7 @@ function loadImage(src){
 }
 
 function renderImageVanilla() {
-  let id = 'vanilla';
+  let id = 'fVanilla';
   if(imageResult.length > 0) {
     getFlexbox(id, 'Bild');
     var canvas = getCanvas(id);
@@ -72,7 +72,7 @@ function renderImageVanilla() {
 }
 
 function renderImageInsta(){
-  let id = 'instagram';
+  let id = 'fInstagram';
   if(imageResult.length > 0) {
     getFlexbox(id, id);
     var canvas = getCanvas(id);
@@ -115,7 +115,7 @@ function renderImageInsta(){
 }
 
 function renderImageTwitter(){
-  let id = 'twitter';
+  let id = 'fTwitter';
   if(imageResult.length > 0 && slogan.length > 0) {
     getFlexbox(id, 'Twitter: Slogan');
     var canvas = getCanvas(id);
@@ -205,9 +205,9 @@ function renderImageTwitter(){
 function renderImageTwitterZ(greyscale){
   let id = '';
   if(greyscale) {
-    id = 'twitter1';
+    id = 'fTwitter1';
   } else {
-    id = 'twitter2';
+    id = 'fTwitter2';
   }
   if(imageResult.length > 0 && ( zitatgeberin.length > 0 || zitat.length > 0 || zitatfunktion.length > 0 ) ) {
     getFlexbox(id, 'Twitter: Zitatbox Einzelperson')
