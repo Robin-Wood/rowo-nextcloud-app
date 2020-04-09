@@ -299,7 +299,7 @@ function renderImages() {
   else if ($("#instagram").is(':checked')) {
     renderImageInsta();
   }
-  else if $("#divers").is(':checked')) {
+  else if ($("#divers").is(':checked')) {
     renderImageVanilla();
   }
 }
