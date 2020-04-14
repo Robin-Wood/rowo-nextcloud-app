@@ -284,8 +284,8 @@ function renderImageTwitterZ(greyscale){
 
 function renderImages() {
   if($("#twitter").is(':checked')) {
-    $("#formSlogan").display();
-    $("#formZitat").display();
+    $("#formSlogan").show();
+    $("#formZitat").show();
     if (slogan.length != 0) {
       renderImageTwitter();
     }
