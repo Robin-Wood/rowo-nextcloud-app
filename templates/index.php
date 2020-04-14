@@ -30,24 +30,28 @@ style('robinwoodapp', 'style');
 				<span>Bildquelle</span>
 				<input type="text" id="quelle" />
 			</label>
-			<strong>Slogan</strong>
-			<label>
-				<span>Slogan</span>
-				<input type="text" id="slogan" />
-			</label>
-			<strong>Zitatbox</strong>
-			<label>
-				<span>Zitat</span>
-				<input type="text" id="zitat" />
-			</label>
-			<label>
-				<span>Zitatgeber*in</span>
-				<input type="text" id="zitatgeberin" />
-			</label>
-			<label>
-				<span>Zitatgeber*in Funktion</span>
-				<input type="text" id="zitatfunktion" />
-			</label>
+			<div id="formSlogan">
+        <strong>Slogan</strong>
+        <label>
+          <span>Slogan</span>
+          <input type="text" id="slogan" />
+        </label>
+      </div>
+      <div id="formZitat">
+        <strong>Zitatbox</strong>
+        <label>
+          <span>Zitat</span>
+          <input type="text" id="zitat" />
+        </label>
+        <label>
+          <span>Zitatgeber*in</span>
+          <input type="text" id="zitatgeberin" />
+        </label>
+        <label>
+          <span>Zitatgeber*in Funktion</span>
+          <input type="text" id="zitatfunktion" />
+        </label>
+      </div>
 		</div>
 	</div>
 	<div id="app-content">

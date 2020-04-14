@@ -74,7 +74,7 @@ function renderImageVanilla() {
 function renderImageInsta(){
   let id = 'fInstagram';
   if(imageResult.length > 0) {
-    getFlexbox(id, id);
+    getFlexbox(id, "Instagram");
     var canvas = getCanvas(id);
     var ctx = getCtx(id);
 
@@ -284,6 +284,8 @@ function renderImageTwitterZ(greyscale){
 
 function renderImages() {
   if($("#twitter").is(':checked')) {
+    $("#formSlogan").display();
+    $("#formZitat").display();
     if (slogan.length != 0) {
       renderImageTwitter();
     }
@@ -293,9 +295,13 @@ function renderImages() {
     }
   }
   else if ($("#instagram").is(':checked')) {
+    $("#formSlogan").hide();
+    $("#formZitat").hide();
     renderImageInsta();
   }
   else if ($("#divers").is(':checked')) {
+    $("#formSlogan").hide();
+    $("#formZitat").hide();
     renderImageVanilla();
   }
 }
