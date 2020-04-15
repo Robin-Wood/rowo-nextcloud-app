@@ -252,7 +252,7 @@ function renderImageTwitterZ(greyscale){
         ctx.fillStyle = "white";
         ctx.globalAlpha=1;
         ctx.textAlign = "left";
-        ctx.font = 'bold ' + 0.19*canvas.width + 'px MarkOT';
+        ctx.font = 'bold ' + 0.019*canvas.width + 'px MarkOT';
         ctx.fillText(zitatgeberin, twitterWidth*spalte, twitterHeight*0.57);
       }
       if(zitatfunktion.length > 0) {
@@ -260,7 +260,7 @@ function renderImageTwitterZ(greyscale){
         ctx.fillStyle = "white";
         ctx.globalAlpha=1;
         ctx.textAlign = "left";
-        ctx.font = 'bold ' + 0.19*canvas.width + 'px MarkOT';
+        ctx.font = 'bold ' + 0.019*canvas.width + 'px MarkOT';
         ctx.fillText(zitatfunktion, twitterWidth*spalte, twitterHeight*0.57+21*1.2);
       }
       if(zitat.length > 0) {
