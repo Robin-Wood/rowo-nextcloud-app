@@ -99,8 +99,8 @@ function renderImageLogo(id, name, width, height){
         ctx.globalAlpha=1;
         ctx.fillStyle = 'white';
         ctx.textAlign = "left";
-        ctx.font = width*0.02 + 'px MarkOT';
-        ctx.fillText('Foto: ' + quelle, 22, height-22);
+        ctx.font = width*height*0.000016 + 'px MarkOT';
+        ctx.fillText('Foto: ' + quelle, width*height*0.000016, height-width*height*0.000016);
       }
       if(currentId == id) {
         updateDetail(currentId);
