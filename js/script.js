@@ -1,8 +1,6 @@
 // Current optimal image sizes for Twitter
 const twitterWidth = 1024;
 const twitterHeight = 512;
-const instaWidth = 1080;
-const instaHeight = 1350;
 const facebookWidth = 2048;
 const facebookHeight = 1149;
 
@@ -72,7 +70,7 @@ function renderImageVanilla(id, name) {
   }
 }
 
-function renderImageInsta(id, name){
+function renderImageLogo(id, name, width, height){
   if(imageResult.length > 0) {
     getFlexbox(id, name);
     var canvas = getCanvas(id);
@@ -81,28 +79,28 @@ function renderImageInsta(id, name){
     var image = new Image();
 
     image.onload = function() {
-      var barHeight = (instaHeight-instaWidth)/2;
+      var barHeight = (height-width)/2;
 
-      canvas.width = instaWidth;
-      canvas.height = instaHeight;
+      canvas.width = width;
+      canvas.height = height;
 
       ctx.filter = 'none';
-      drawImageProp(ctx, image, 0, 0, instaWidth, instaHeight, offset);
+      drawImageProp(ctx, image, 0, 0, width, height, offset);
       ctx.fillStyle = blendColor;
       ctx.globalAlpha=1;
-      var gradient = ctx.createLinearGradient(0, instaHeight-barHeight*1.3, 0, instaHeight);
+      var gradient = ctx.createLinearGradient(0, height-barHeight*1.3, 0, height);
       gradient.addColorStop(0, 'rgba(0, 0, 0, 0)');
       gradient.addColorStop(1, 'rgba(0, 0, 0, 0.50)');
       ctx.fillStyle = gradient;
-      ctx.fillRect(0, instaHeight-barHeight*1.3, instaWidth, barHeight*1.3);
+      ctx.fillRect(0, height-barHeight*1.3, width, barHeight*1.3);
       ctx.globalAlpha=1;
-      ctx.drawImage(logo,(instaWidth-barHeight*0.45*logoRatio)*0.5, instaHeight - barHeight*0.95, barHeight*0.45*logoRatio, barHeight*0.45);
+      ctx.drawImage(logo,(width-barHeight*0.45*logoRatio)*0.5, height - barHeight*0.95, barHeight*0.45*logoRatio, barHeight*0.45);
       if(quelle.length > 0) {
         ctx.globalAlpha=1;
         ctx.fillStyle = 'white';
         ctx.textAlign = "left";
-        ctx.font = canvas.width*0.02 + 'px MarkOT';
-        ctx.fillText('Foto: ' + quelle, 22, instaHeight-22);
+        ctx.font = width*0.02 + 'px MarkOT';
+        ctx.fillText('Foto: ' + quelle, 22, height-22);
       }
       if(currentId == id) {
         updateDetail(currentId);
@@ -298,11 +296,12 @@ function renderImages() {
   else if ($("#facebook").is(':checked')) {
     $("#formSlogan").hide();
     $("#formZitat").hide();
+    renderImageLogo('fFacebook', "Facebook", 2048, 3072);
   }
   else if ($("#instagram").is(':checked')) {
     $("#formSlogan").hide();
     $("#formZitat").hide();
-    renderImageInsta('fInstagram', "Instagram");
+    renderImageLogo('fInstagram', "Instagram", 1080, 1350);
   }
   else if ($("#divers").is(':checked')) {
     $("#formSlogan").hide();
