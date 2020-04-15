@@ -45,10 +45,9 @@ function loadImage(src){
 
 }
 
-function renderImageVanilla() {
-  let id = 'fVanilla';
+function renderImageVanilla(id, name) {
   if(imageResult.length > 0) {
-    getFlexbox(id, 'Bild');
+    getFlexbox(id, name);
     var canvas = getCanvas(id);
     var ctx = getCtx(id);
 
@@ -73,10 +72,9 @@ function renderImageVanilla() {
   }
 }
 
-function renderImageInsta(){
-  let id = 'fInstagram';
+function renderImageInsta(id, name){
   if(imageResult.length > 0) {
-    getFlexbox(id, "Instagram");
+    getFlexbox(id, name);
     var canvas = getCanvas(id);
     var ctx = getCtx(id);
 
@@ -116,10 +114,10 @@ function renderImageInsta(){
   }
 }
 
-function renderImageTwitter(){
-  let id = 'fTwitter';
+function renderImageTwitter(id, name){
+  let id = ;
   if(imageResult.length > 0 && slogan.length > 0) {
-    getFlexbox(id, 'Twitter: Slogan');
+    getFlexbox(id, name);
     var canvas = getCanvas(id);
     var ctx = getCtx(id);
 
@@ -204,15 +202,17 @@ function renderImageTwitter(){
   }
 }
 
-function renderImageTwitterZ(greyscale){
-  let id = '';
-  if(greyscale) {
-    id = 'fTwitter1';
-  } else {
-    id = 'fTwitter2';
-  }
+function renderImageTwitterZG(id, name) {
+  renderImageTwitterZ(true, id, name);
+}
+
+function renderImageTwitterZC(id, name) {
+  renderImageTwitterZ(false, id, name);
+}
+
+function renderImageTwitterZ(greyscale, id, name){
   if(imageResult.length > 0 && ( zitatgeberin.length > 0 || zitat.length > 0 || zitatfunktion.length > 0 ) ) {
-    getFlexbox(id, 'Twitter: Zitatbox Einzelperson')
+    getFlexbox(id, name)
     var canvas = getCanvas(id);
     var ctx = getCtx(id);
 
@@ -289,11 +289,11 @@ function renderImages() {
     $("#formSlogan").show();
     $("#formZitat").show();
     if (slogan.length != 0) {
-      renderImageTwitter();
+      renderImageTwitter('fTwitter', 'Twitter: Slogan');
     }
     if (zitatgeberin.length != 0 || zitatfunktion.length!=0) {
-      renderImageTwitterZ(false);
-      renderImageTwitterZ(true);
+      renderImageTwitterZG('fTwitterZG', 'Twitter: Zitatbox Einzelperson');
+      renderImageTwitterZC('fTwitterZC', 'Twitter: Zitatbox Einzelperson');
     }
   }
   else if ($("#facebook").is(':checked')) {
@@ -303,12 +303,12 @@ function renderImages() {
   else if ($("#instagram").is(':checked')) {
     $("#formSlogan").hide();
     $("#formZitat").hide();
-    renderImageInsta();
+    renderImageInsta('fInstagram', "Instagram");
   }
   else if ($("#divers").is(':checked')) {
     $("#formSlogan").hide();
     $("#formZitat").hide();
-    renderImageVanilla();
+    renderImageVanilla('fVanilla', 'Bild');
   }
 }
 
