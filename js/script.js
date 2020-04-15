@@ -3,6 +3,8 @@ const twitterWidth = 1024;
 const twitterHeight = 512;
 const instaWidth = 1080;
 const instaHeight = 1350;
+const facebookWidth = 2048;
+const facebookHeight = 1149;
 
 const logoRatio = 6.17283950617284;
 
@@ -101,7 +103,7 @@ function renderImageInsta(){
         ctx.globalAlpha=1;
         ctx.fillStyle = 'white';
         ctx.textAlign = "left";
-        ctx.font = '22px MarkOT';
+        ctx.font = canvas.width*0.02 + 'px MarkOT';
         ctx.fillText('Foto: ' + quelle, 22, instaHeight-22);
       }
       if(currentId == id) {
@@ -293,6 +295,10 @@ function renderImages() {
       renderImageTwitterZ(false);
       renderImageTwitterZ(true);
     }
+  }
+  else if ($("#facebook").is(':checked')) {
+    $("#formSlogan").hide();
+    $("#formZitat").hide();
   }
   else if ($("#instagram").is(':checked')) {
     $("#formSlogan").hide();

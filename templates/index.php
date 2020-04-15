@@ -12,6 +12,8 @@ style('robinwoodapp', 'style');
         <span>Plattform</span><br>
         <input type="radio" id="twitter" name="plattform" value="twitter" class="radio">
         <label for="twitter">Twitter</label><br>
+        <input type="radio" id="facebook" name="plattform" value="facebook" class="radio">
+        <label for="facebook">Facebook</label><br>
         <input type="radio" id="instagram" name="plattform" value="instagram" class="radio">
         <label for="instagram">Instagram</label><br>
         <input type="radio" id="divers" name="plattform" value="divers" class="radio">
