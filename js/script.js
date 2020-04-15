@@ -144,11 +144,11 @@ function renderImageTwitter(){
       ctx.drawImage(logo,330,414,360,360/logoRatio);
       if(slogan.length > 0) {
         ctx.textAlign = "center";
-        ctx.font = '130px Plakkaat';
+        ctx.font = 0.12*canvas.width + 'px Plakkaat';
         if (ctx.measureText(slogan).width < twitterWidth*margin) {
           ctx.fillText(slogan, twitterWidth/2, twitterHeight/2);
         } else {
-          ctx.font = '100px Plakkaat';
+          ctx.font = 0.09*canvas.width + 'px Plakkaat';
           if (ctx.measureText(slogan).width < twitterWidth*margin) {
             ctx.fillText(slogan, twitterWidth/2, twitterHeight/2);
           } else {
@@ -162,7 +162,7 @@ function renderImageTwitter(){
               ctx.fillText(slogan1, twitterWidth/2, twitterHeight/2-100/2*lineHeight);
               ctx.fillText(slogan2, twitterWidth/2, twitterHeight/2+100/2*lineHeight);
             } else {
-              ctx.font = '80px Plakkaat';
+              ctx.font = 0.07*canvas.width + 'px Plakkaat';
               var words = slogan.split(" ");
               let slogan1 = words.shift();
               while(ctx.measureText(slogan1).width < ctx.measureText(slogan).width/2 && words.length > 1 && ctx.measureText(slogan1 + " " + words[0]).width < twitterWidth*margin) {
@@ -191,7 +191,7 @@ function renderImageTwitter(){
       }
       if(quelle.length > 0) {
         ctx.textAlign = "left";
-        ctx.font = '18px MarkOT';
+        ctx.font = 0.017*canvas.width + 'px MarkOT';
         ctx.fillText('Foto: ' + quelle, 32, 489);
       }
       if(currentId == id) {
@@ -244,7 +244,7 @@ function renderImageTwitterZ(greyscale){
         ctx.fillStyle = "white";
         ctx.globalAlpha=1;
         ctx.textAlign = "left";
-        ctx.font = '18px MarkOT';
+        ctx.font = 0.017*canvas.width + 'px MarkOT';
         ctx.fillText('Foto: ' + quelle, 32, 489);
       }
       if(zitatgeberin.length > 0) {
@@ -252,7 +252,7 @@ function renderImageTwitterZ(greyscale){
         ctx.fillStyle = "white";
         ctx.globalAlpha=1;
         ctx.textAlign = "left";
-        ctx.font = 'bold 21px MarkOT';
+        ctx.font = 'bold ' + 0.19*canvas.width + 'px MarkOT';
         ctx.fillText(zitatgeberin, twitterWidth*spalte, twitterHeight*0.57);
       }
       if(zitatfunktion.length > 0) {
@@ -260,7 +260,7 @@ function renderImageTwitterZ(greyscale){
         ctx.fillStyle = "white";
         ctx.globalAlpha=1;
         ctx.textAlign = "left";
-        ctx.font = 'bold 21px MarkOT';
+        ctx.font = 'bold ' + 0.19*canvas.width + 'px MarkOT';
         ctx.fillText(zitatfunktion, twitterWidth*spalte, twitterHeight*0.57+21*1.2);
       }
       if(zitat.length > 0) {
@@ -268,7 +268,7 @@ function renderImageTwitterZ(greyscale){
         ctx.fillStyle = "white";
         ctx.globalAlpha=1;
         ctx.textAlign = "left";
-        ctx.font = '900 29px MarkOT';
+        ctx.font = '900 ' + 0.027*canvas.width + 'px MarkOT';
         var lines = cutIntoLines(ctx, zitat, twitterWidth*0.43);
         for (var i = (lines.length)-1; i >= 0; i--) {
           ctx.fillText(lines[i], twitterWidth*spalte, twitterHeight*(0.45-(lines.length-1-i)*0.08));
