@@ -115,7 +115,6 @@ function renderImageInsta(id, name){
 }
 
 function renderImageTwitter(id, name){
-  let id = ;
   if(imageResult.length > 0 && slogan.length > 0) {
     getFlexbox(id, name);
     var canvas = getCanvas(id);
