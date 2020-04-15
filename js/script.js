@@ -319,7 +319,7 @@ function download(canvas) {
   };
 }
 
-$( "#twitter, #instagram, #divers" ).change(function() {
+$( "#twitter, #instagram, #divers", "#facebook" ).change(function() {
   removeAll();
   renderImages();
 });
