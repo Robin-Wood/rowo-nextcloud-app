@@ -54,12 +54,12 @@ function renderImageVanilla(id, name, width=-1, height=-1) {
       } else {
         canvas.width = width;
       }
+      
       if (height < 0) {
         canvas.height = image.height;
       } else {
         canvas.height = height;
       }
-      canvas.height = image.height;
       ctx.filter = 'none';
       ctx.clearRect(0,0, canvas.width, canvas.height);
       ctx.fillStyle = blendColor;
