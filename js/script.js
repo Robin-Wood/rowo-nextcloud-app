@@ -504,7 +504,7 @@ function updateDetail(id) {
   }
 }
 
-function getImageBrightness(imageSrc, callback) {
+function getImageBrightness(imageSrc) {
   var img = document.createElement('img'),
     colorSum = 0,
     i = 0,
