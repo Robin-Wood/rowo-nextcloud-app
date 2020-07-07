@@ -1,8 +1,6 @@
 // Current optimal image sizes for Twitter
 const twitterWidth = 1024;
 const twitterHeight = 512;
-const facebookWidth = 2048;
-const facebookHeight = 1149;
 
 const logoRatio = 6.17283950617284;
 
@@ -57,7 +55,7 @@ function renderImageVanilla(id, name) {
       ctx.clearRect(0,0, canvas.width, canvas.height);
       ctx.fillStyle = blendColor;
       ctx.fillRect(0,0,canvas.width,canvas.height);
-      ctx.filter = currentFilter + ' contrast(1.2)';
+      ctx.filter = currentFilter + ' contrast(1.25)';
       ctx.globalCompositeOperation = currentBlend;
       ctx.drawImage(image, 0, 0, image.width, image.height);
       if(currentId == id) {
@@ -128,7 +126,7 @@ function renderImageTwitter(id, name){
       ctx.clearRect(0,0, canvas.width, canvas.height);
       ctx.fillStyle = blendColor;
       ctx.fillRect(0,0,canvas.width,canvas.height);
-      ctx.filter = currentFilter + ' contrast(1.6)';
+      ctx.filter = currentFilter + ' contrast(1.55)';
       ctx.globalCompositeOperation = currentBlend;
       drawImageProp(ctx, twitterImage, 0, 0, twitterWidth, twitterHeight, offset);
 
@@ -303,6 +301,11 @@ function renderImages() {
     $("#formZitat").hide();
     renderImageLogo('fInstagram', "Instagram", 1080, 1350);
   }
+  else if ($("#website").is(':checked')) {
+    $("#formSlogan").hide();
+    $("#formZitat").hide();
+    renderImageVanilla('fKampagne', "Kampagne-Header", 1024, 407);
+  }
   else if ($("#divers").is(':checked')) {
     $("#formSlogan").hide();
     $("#formZitat").hide();
@@ -319,7 +322,7 @@ function download(canvas) {
   };
 }
 
-$( "#twitter, #instagram, #divers, #facebook" ).change(function() {
+$( "#twitter, #instagram, #divers, #facebook, #website" ).change(function() {
   removeAll();
   renderImages();
 });
