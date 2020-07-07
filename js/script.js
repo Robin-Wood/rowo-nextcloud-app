@@ -66,7 +66,7 @@ function renderImageVanilla(id, name, width=-1, height=-1) {
       ctx.fillRect(0,0,canvas.width,canvas.height);
       ctx.filter = currentFilter + ' contrast(1.25)';
       ctx.globalCompositeOperation = currentBlend;
-      ctx.drawImage(image, 0, 0, image.width, image.height);
+      drawImageProp(ctx, image, 0, 0, canvas.width, canvas.height, offset);
       if(currentId == id) {
         updateDetail(currentId);
       }
