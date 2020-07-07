@@ -322,8 +322,8 @@ function renderImages() {
   else if ($("#website").is(':checked')) {
     $("#formSlogan").hide();
     $("#formZitat").hide();
-    renderImageVanilla('fKampagne', "Kampagne-Header", 1024, 407);
-    renderImageVanilla('fSlider', "Slider", 800, 500);
+    renderImageVanilla('fKampagne', "Header", 1024, 407);
+    renderImageVanilla('fSlider', "Slider, Übersichten", 800, 500);
   }
   else if ($("#divers").is(':checked')) {
     $("#formSlogan").hide();
