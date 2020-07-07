@@ -88,8 +88,17 @@ function renderImageLogo(id, name, width, height){
     image.onload = function() {
       var barHeight = (height-width)/2;
 
-      canvas.width = width;
-      canvas.height = height;
+      if (width < 0) {
+        canvas.width = image.width;
+      } else {
+        canvas.width = width;
+      }
+      
+      if (height < 0) {
+        canvas.height = image.height;
+      } else {
+        canvas.height = height;
+      }
 
       ctx.filter = 'none';
       drawImageProp(ctx, image, 0, 0, width, height, offset);
@@ -314,6 +323,7 @@ function renderImages() {
     $("#formSlogan").hide();
     $("#formZitat").hide();
     renderImageVanilla('fKampagne', "Kampagne-Header", 1024, 407);
+    renderImageVanilla('fSlider', "Slider", 800, 500);
   }
   else if ($("#divers").is(':checked')) {
     $("#formSlogan").hide();
