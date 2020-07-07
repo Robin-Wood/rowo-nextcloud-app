@@ -41,7 +41,7 @@ function loadImage(src){
 
 }
 
-function renderImageVanilla(id, name) {
+function renderImageVanilla(id, name, width=-1, height=-1) {
   if(imageResult.length > 0) {
     getFlexbox(id, name);
     var canvas = getCanvas(id);
@@ -49,7 +49,16 @@ function renderImageVanilla(id, name) {
 
     var image = new Image();
     image.onload = function() {
-      canvas.width = image.width;
+      if (width < 0) {
+        canvas.width = image.width;
+      } else {
+        canvas.width = width;
+      }
+      if (height < 0) {
+        canvas.height = image.height;
+      } else {
+        canvas.height = height;
+      }
       canvas.height = image.height;
       ctx.filter = 'none';
       ctx.clearRect(0,0, canvas.width, canvas.height);
